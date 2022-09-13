@@ -34,6 +34,15 @@
    grid-gap: 10px;
    text-align: left;
 }
+
+.reveal .slide-number{
+background-color: rgba(0, 0, 145, 0.75);
+}
+
+:root {
+	--r-link-color: rgba(0, 0, 145, 0.75);
+}
+
 </style>
 
 	</head>
@@ -163,7 +172,7 @@
 				</section>
 
 				<section data-background="images/7pHTiZYbAoq40.gif">
-					<div style='color: white;background: rgba(0, 0, 0, 0.4);'>
+					<div style='color: black;background: rgba(250, 250, 250, 0.4);'>
 					  <div>Code source de la présentation ouvert sur <a href="https://github.com/dataesr/presentations">https://github.com/dataesr/presentations</a></div>
 					  <div>qui est un fork de la library open source <a href="https://github.com/hakimel/reveal.js/">reveal.js</a></div>
 					</div>
@@ -188,11 +197,13 @@
 				progress: true,
 				center: true,
 				hash: true,
-				slideNumber: true,
+				slideNumber: 'c/t',
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
 			});
+			Reveal.configure({ pdfMaxPagesPerSlide: 1 })
+			Reveal.configure({ pdfSeparateFragments: false });
 
 		</script>
 

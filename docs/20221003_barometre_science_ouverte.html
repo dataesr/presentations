@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Baromètre de la Science Ouverte</title>
+
+		<meta name="description" content="Présentation BSO lors de la journée 'Observer l'ouverture des publications scientifiques du 03/10/2022'">
+		<meta name="author" content="Eric Jeangirard">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<style>
+.container{
+  display: flex;
+}
+.col {
+  flex: 1;
+}
+.twocolumn {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-gap: 10px;
+   text-align: left;
+}
+
+.reveal .slide-number{
+background-color: rgba(0, 0, 145, 0.75);
+}
+
+:root {
+	--r-link-color: rgba(0, 0, 145, 0.75);
+}
+
+</style>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<div style="float:left">
+						<img src="images/mesr.svg" alt="mesr logo" style="height: 180px; margin: -5em auto 0rem 1em; background: transparent;" class="mesr-logo">
+					</div>
+					<div style="float:left;display:block;margin:auto">
+						<div style='font-size:1.2em'>Mesurer l’évolution de la science ouverte en France à partir de données fiables, ouvertes et maîtrisées sans recourir aux bases bibliométriques propriétaires</div>
+					</div>
+					<div style="float:left;margin-top:2rem">
+						<p style='font-size:0.6em;margin-top:0;margin-bottom:0.5rem;'>3 octobre 2022</p>
+					</div>
+					<div style="float:right;margin-top:2rem">
+						<p style='font-size:0.6em;margin-top:0;margin-bottom:0.5rem;'>Eric Jeangirard</p>
+						<p style='font-size:0.6em;margin-top:0;margin-bottom:0.2rem;'>Département des outils d'aide</p>
+						<p style='font-size:0.6em;margin-top:0;margin-bottom:0.5rem;'>à la décision - MESR</p>
+						</pre>
+					</div>
+				</section>
+				
+				<section>
+					<h2 style='font-size:1.2em'>Les points clés</h2>
+					<div style='font-size:0.85em'>
+						Le Baromètre de la Science Ouverte (BSO) accompagne la politique publique de science ouverte
+						<ul style='font-size:0.75em;line-height: 180%;'>
+							<br>
+							<li>📈 depuis 2018, montrant une évolution de  <span style='font-weight:900'>+ de 20 points d'accès ouvert en 4 ans</span> </li>
+							<li><span style='font-weight:900'>sans recourir aux sources propriétaires</span> 
+								<ul style='line-height: 120%;'>
+									<li>non compatibles avec le partage (❌ transparence ❌ reproductibilité) </li>
+									<li>qui limitent la création de services ouverts</li>
+									<li>non représentatives de la production scientifique française</li>
+								</ul>
+							<li>🪆en proposant du <span style='font-weight:900'>code, des données et des services ouverts</span>, permettant notamment la mise en place de <span style='font-weight:900'>dizaines de déclinaisons locales</span></li>
+							<li>🧭 en étendant son périmètre d'analyse en fonction de la politique publique menée (notamment essais cliniques, codes et données de la recherche à venir)</li>
+						</ul>
+					</div>
+				</section>
+				
+				<section>
+					<h2 style='font-size:1.2em'>Le BSO est une commande pour suivre et piloter la politique publique</h2>
+					<div style='font-size:0.85em'>
+						<ul style='font-size:0.75em;line-height: 180%;'>
+							<br>
+							<li>📔 respectant plusieurs attendus, notamment</li>
+								<ul style='line-height: 120%;'>
+									<li>prise en compte de la <span style='font-weight:900'>bibliodiversité</span> </li>
+									<li>partage et ouverture pour favoriser la <span style='font-weight:900'>transparence et la reproductibilité </li>
+								</ul>
+							<li>⏳ qui s'adapte aux <span style='font-weight:900'>contraintes et évolutions de la politique publique</span></li>
+								<ul style='line-height: 120%;'>
+									<li>première photographie de la situation de l'accès ouvert fin 2018</li>
+									<li>extension progressive des indicateurs et du périmètre</li>
+								</ul>
+							<br>
+							<li class="fragment fade-in">
+								🧗 Ces contraintes nous ont amené à <span style='font-weight:900'>choisir la voie difficile</span>
+								<ul style='line-height: 120%;'>
+									<li>au niveau méthodologique, notamment pour la <span style='font-weight:900'>détection des affiliations et des champs disciplinaires</span></li>
+									<li>au niveau opérationnel, avec une <span style='font-weight:900'>infrastructure informatique adaptée</span></li>
+							</li>
+					</div>
+				</section>
+				
+				<section>
+					<h2 style='font-size:1.2em'>Une approche modulaire ...</h2>
+					<div style='font-size:0.85em'>
+						<ul style='font-size:0.75em;line-height: 180%;'>
+							<br>
+						        <img src="https://github.com/dataesr/bso-publications/blob/main/doc/flow_chart_publications.png?raw=true" alt="dataesr github" style="width:80%" >
+					</div>
+				</section>
+				
+				<section>
+					<h2 style='font-size:1.2em'>... qui capitalise et complète les sources ouvertes existantes</h2>
+					<div style='display:block;font-size:0.5em;float:right'>🏗️ : construit au MESR dans le cadre du BSO</div>
+					<div style='font-size:0.85em'>
+						<ul style='font-size:0.75em;line-height: 180%;'>
+							<li><span style='font-weight:900'>🏛️ Métadonnées d'affiliations</span></li>
+								<ul>
+									<li>PubMed, Crossref, HAL</li>
+									<li>🏗️ Crawling des pages web</li>
+									<li>🏗️ Détection automatique des pays</li>
+								</ul>
+							<li><span style='font-weight:900'>🔍 Caractérisation de l'accès ouvert</span></li>
+								<ul>
+									<li>Détection de l'accès ouvert : Unpaywall</li>
+									<li>🏗️ Classification des types d'accès ouvert</li>
+								</ul>
+							<li><span style='font-weight:900'>🤖 Classification thématique</span></li>
+								<ul>
+									<li>Données d'entrainement : Pascal et Francis, Field of Research (FoR)</li>
+									<li>🏗️ Modèles de classification automatique (fastText)</li>
+								</ul>
+					</div>
+				</section>
+				<section>
+					<h2 style='font-size:1.2em'>Comparaison avec des principales bases internationales</h2>
+					<div style='display:block;font-size:0.4em;float:right'>Lauranne Chaignon, Daniel Egret; Identifying scientific publications countrywide and measuring their open access: The case of the French Open Science Barometer (BSO). Quantitative Science Studies 2022; 3 (1): 18–36. doi: https://doi.org/10.1162/qss_a_00179</div>
+					<div style='font-size:0.85em'>
+						<img src='images/bso_benchmark_2019.png' alt='benchmark bso' style='width:80%'>
+						<ul>
+							<li>"The open-source strategy used by the BSO effectively identifies the vast majority of publications with a persistent identifier (DOI) for Open Science monitoring."
+							</li>
+						</ul>
+					</div>
+				</section>
+				
+				<section>
+					<h2 style='font-size:1.2em'>Des services de partage de l'information pour plusieurs usages</h2>
+					<div style='font-size:0.85em'>
+						<ul style='font-size:0.75em;line-height: 180%;'>
+							<li><span style='font-weight:900'>'Grand' public</span> : site web, conçu avec l'aide de l'agence de design WeDoData https://barometredelascienceouverte.esr.gouv.fr/</li>
+							<li><span style='font-weight:900'>Démultipliant</span> : fournir les moyens pour construire un BSO local (niveau établissement, laboratoire ...) très facilement et avec le même rendu que le BSO national</li>
+							<li><span style='font-weight:900'>Expert des données</span> : dump des jeux de données disponibles en téléchargement en csv, jsonl</li>
+							<li><span style='font-weight:900'>Académique</span> : méthodologie détaillée disponible sur HAL</li>
+							<li><span style='font-weight:900'>Informatique</span> : le code source est ouvert</li>
+					</div>
+				</section>
+				
+				<section>
+					<h2 style='font-size:1.2em'>Nouveautés 2021 : nouveau site web</h2>
+						<img src='images/bso_web_1.png' alt='bso web 1' style='width:80%'>
+				</section>
+				<section>
+					<h2 style='font-size:1.2em'>Nouveautés 2021 : analyse par date d'observation </h2>
+						<img src='images/bso_web_2.png' alt='bso web 2' style='width:75%'>
+				</section>
+				<section>
+					<h2 style='font-size:1.2em'>Nouveautés 2021 : volet santé</h2>
+						<img src='images/bso_web_3.png' alt='bso web 3' style='width:80%'>
+				</section>
+				<section>
+					<h2 style='font-size:1.2em'>Prochaines grandes étapes</h2>
+					<div style='font-size:0.85em'>
+						<ul style='font-size:0.75em;line-height: 180%;'>
+							<li>Intégration d'indicateurs portant sur les données de la recherche, codes et logiciels</li>
+							<li>Intégration d'indicateurs portant sur les thèses de doctorat</li>
+							<li>Nouvelles fonctionalités pour les BSO locaux (financeurs, identifiants HAL)</li>
+				</section>
+				
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				slideNumber: 'c/t',
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+			});
+			Reveal.configure({ pdfMaxPagesPerSlide: 1 })
+			Reveal.configure({ pdfSeparateFragments: false });
+
+		</script>
+
+	</body>
+</html>
