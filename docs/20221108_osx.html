@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>OSX Paris - 08/11/2022</title>
+		<meta name="description" content="Presentation for OSX">
+		<meta name="author" content="Anne L'Hôte">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<style>
+			:root {
+				--r-link-color: rgba(0, 0, 145, 0.75);
+			}
+			.col {
+				flex: 1;
+			}
+			.container {
+				display: flex;
+			}
+			.reveal .slide-number {
+				background-color: rgba(0, 0, 145, 0.75);
+				left: 8px;
+				right: auto;
+			}
+			.twocolumn {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-gap: 10px;
+				text-align: left;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<div style="float:left;">
+						<img src="images/mesr.svg" alt="mesr logo" style="height:180px; margin:0 auto 0rem 1em; background:transparent;" class="mesr-logo">
+					</div>
+					<div style="float:left; display:block; margin:auto">
+						<div style="font-size:1.2em">GROBID : mieux digérer les publications savantes pour muscler les communautés open source scientifiques</div>
+					</div>
+					<div style="float:right; margin-top:2rem;">
+						<p style="font-size:0.6em; margin-top:0; margin-bottom:0.5rem;">
+							Anne L'Hôte
+						</p>
+						<p style="font-size:0.6em; margin-top:0; margin-bottom:0.2rem;">
+							Département des outils d'aide
+						</p>
+						<p style="font-size:0.6em; margin-top:0; margin-bottom:0.5rem;">
+							à la décision - SIES - MESR
+						</p>
+						</pre>
+					</div>
+				</section>
+
+				<section>
+
+					<section>
+						<h2>GROBID</h2>
+						<div>
+							<ul>
+								<li><b>G</b>ene<b>R</b>ation <b>O</b>f <b>BI</b>bliographic <b>D</b>ata</li>
+								<li>Logiciel open source</li>
+								<li>Bibliothèque de machine learning</li>
+								<li>Extraire, d'analyser et de restructurer des documents bruts en documents structurés</li>
+								<li>PDF => XML/TEI structurés</li>
+								<li>Focus particulier sur les publications techniques et scientifiques</li>
+								<li>Faciliter l'exploration de texte, l'extraction d'informations et l'analyse sémantique de ces publications</li>
+							</ul>
+						</div>
+					</section>
+
+					<section>
+						<h2>GROBID</h2>
+						<img src="images/osx_grobid.png" alt="GROBID workflow" style="width:80%">
+					</section>
+
+					<section>
+						<h2>GROBID</h2>
+						<ul>
+							<li>Passage à l'échelle</li>
+							<li>📦 Conteneurisation</li>
+							<li>Optimisation</li>
+							<li>Fiabilité et consistence des données (bons taux de précision de rappel)</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>GROBID</h2>
+						<ul>
+							<li>🐙 <a href="https://github.com/kermitt2/grobid/">https://github.com/kermitt2/grobid/</a></li>
+							<li>⭐ 1.820 stars</li>
+							<li>🪶 Licence Apache 2</li>
+							<li>3.4K téléchargements sur <a href="https://hub.docker.com/r/grobid/grobid/tags">Docker Hub</a></li>
+							<li>⌨️ Auteur principal : Patrice Lopez de Science Miner</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>GROBID</h2>
+						<div>Hyper reconnu dans le monde de l'édition scientifique research gate nb publi google schola. GROBID est utilisé aujourd'hui par de très nombreux services d'information scientifiques tel ResearchGate, Academia.edu, Mendeley, le CERN, Internet Archive, le CNRS, l'OEB, etc. GROBID est déployé dans HAL pour extraire les métadonnées de publications auto-archivées par leurs auteurs, ainsi que dans D_SPACE (depuis la version 7) ou Apache-Tika. Des éditeurs utilisent GROBID, comme Elsevier qui a déployé GROBID pour extraire les références bibliographiques de la collection SSRN. 
+							À ResearchGate, toutes les informations extraites des millions de PDF chargés par les utilisateurs (incluant les formulaires de métadonnées pré-remplies ou les extractions de figures), les annotations interactives sur les PDF affichés ou encore les services de notifications de citation se basent sur GROBID. L’outil a été utilisé à l'INIST dans le cadre d'ISTEX pour structurer les plein-textes, à hauteur de 915,000 PDF éditeur par jour (environ 20 millions de pages par jour) sur un unique serveur avec 16 CPU. 
+							Plus récemment, la plateforme scite.ai a utilisé GROBID pour extraire de 28 millions d'articles plus de 1 milliard de contextes de citations et leurs références bibliographiques. L’outil est utilisé par de nombreuses start-up du domaine (par exemple Paper with Codes, ReadPaper ou genei).
+							GROBID est aussi utilisé pour préparer des corpus en vue d'application de text mining. L'outil est mentionné dans plus de 800 publications scientifiques selon Google Scholar, majoritairement pour cet usage. GROBID a été utilisé pour la construction du corpus CORD-19, pour toutes les publications seulement disponibles en PDF - ce corpus est mentionné dans plus de 5000 publications selon Google Scholar et a donné lieu à la compétition Kaggle la plus populaire depuis sa création.
+						</div>
+					</section>
+
+					<section>
+						<h2>GROBID</h2>
+						<div>
+							<a href="https://scholar.google.com/scholar?q=grobid">Google Scholar - 898 résultats</a>
+							<img src='images/osx_grobid_google_scholar.png' alt='GROBID Google Scholar'>
+						</div>
+					</section>
+
+					<section>
+						<h2>GROBID</h2>
+						<div>
+							GROBID est aujourd'hui utilisé par de nombreux fournisseurs de services d'information scientifique à grande échelle, des chercheurs et des start-up pour extraire des métadonnées structurées ou enrichir le contenu textuel. Grâce à ses multiples utilisateurs/intégrateurs, GROBID a un impact sur des millions d'utilisateurs chaque année. 
+Pour piloter sa politique publique sur la science ouverte, le MESR développe le Baromètre de la Science Ouverte (BSO) qui fournit des indicateurs sur la dynamique d'ouverture des productions scientifiques (publications, données, logiciels, essais cliniques notamment). GROBID et les extensions open source liées s'avèrent être des outils précieux pour mener une analyse automatique et approfondie sur la sémantique du plein texte des publications et ainsi pouvoir calculer des indicateurs pertinents. GROBID et ses outils liés permettent notamment de repérer quels logiciels et quelles données sont utilisés dans chaque publication scientifique, et si ces logiciels et données sont repartagés par les auteurs.
+						</div>
+					</section>
+
+					<section>
+						<h2>GROBID</h2>
+						<div>
+							Liste des champs extraits par GROBID
+							<ul>
+								<li>Extraction et analyse de l'en-tête</li>
+								<li>Extraction et analyse des références</li>
+								<li>Reconnaissance et liaison des contextes de citation</li>
+								<li>Références isolées</li>
+								<li>Analyse des noms</li>
+								<li>Analyse des affiliations et de leurs adresses</li>
+								<li>...</li>
+							</ul>
+						</div>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>BSO</h2>
+						<div>
+							Les publications scientifiques représentent une gigantesque source de données sur les activités de recherche et représentent donc un gisement
+							naturel à exploiter pour le Ministère de l'Enseignement Supérieur et de la Recherche (MESR). La grande majorité des publications scientifiques
+							sont seulement disponibles en PDF. L'exploitation de la richesse d'informations des publications scientifiques en format PDF est une tâche
+							difficile et une quantité importante d'informations peut être perdue lors de l'exploitation automatique du contenu des PDF.
+						</div>
+					</section>
+
+					<section>
+						<h2>BSO</h2>
+						<ul>
+							<li>Pilotage des politiques publiques de la Science Ouverte</li>
+							<li>Construction d'indicateurs (Dynamique d'ouverture des publications)</li>
+							<li>Elargissement des objets scientifiques étudiés (jeux de donnée et codes logiciels)</li>
+							<li>Problématique du téléchargement des PDFs</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2>GROBID & BSO</h2>
+					<div>
+						Utilisation et évolution de GROBID pour les usages du BSO. Mesure d'ouverture des publications mentionnant un jeu de données et / ou un code logiciels.
+						CRéation uo amélioration des images Docker datastet et softcite pour détection dataset et code logiciel
+					</div>
+				</section>
+
+				<section>
+					<section>
+						<h2>Communauté</h2>
+						<div>
+							Au-delà de ses applications directes, GROBID peut aussi s'avérer être un catalyseur de l'open source, dont nous développerons deux exemples.
+							D'une part, GROBID, en identifiant les logiciels fréquemment utilisés par les chercheurs, pourrait aider à structurer des communautés d'usages
+							de logiciels, probablement trans-disciplinaires, et ainsi renforcer l'attrait des outils open sources utilisés. D'autre part, GROBID peut aider à
+							repérer les éventuels risques de vulnérabilité de certaines communautés scientifiques à des outils open source fragiles, dans le même esprit que le
+							récent "Securing Open Source Software Act" du sénat américain adopté en réponse à la faille sur log4j. Ces deux exemples montrent que GROBID peut
+							aussi s'avérer être un outil pour aider à structurer et renforcer les communautés open source scientifiques.
+						</div>
+					</section>
+
+					<section>
+						<h2>Communauté</h2>
+						<ul>
+							<li>Ainsi le MESR contribue à la communauté Open Source en soutenant le développement d'outils libres</li>
+							<li>Structuration des communautés d'usage</li>
+							<li>
+								Repérer les éventuels risques de vulnérabilité de la communauté par rapport à l'open source (vulnérabilité du logiciel utilisé lui-même)
+								ou encore situation de forte dépendance à un outil unique
+							</li>
+							<li>Exemple : quelles disciplines utilisent grobid ? certaines en sont-elles comlpètement dépendantes ?</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<div>
+						Ainsi open source par et pour la communauté
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				center: true,
+				controls: true,
+				hash: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight],
+				progress: true,
+				slideNumber: 'c/t',
+			});
+		</script>
+
+	</body>
+</html>

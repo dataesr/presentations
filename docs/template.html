@@ -3,60 +3,51 @@
 
 	<head>
 		<meta charset="utf-8">
-
 		<title>reveal.js – The HTML Presentation Framework</title>
-
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
-
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
-
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-
 		<style>
-.container{
-  display: flex;
-}
-.col {
-  flex: 1;
-}
-						.twocolumn {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   grid-gap: 10px;
-   text-align: left;
-}
-</style>
-
+			.container{
+				display: flex;
+			}
+			.col {
+				flex: 1;
+			}
+			.twocolumn {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-gap: 10px;
+				text-align: left;
+			}
+		</style>
 	</head>
 
 	<body>
-
 		<div class="reveal">
-
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+
 				<section>
-					<div style="float:left">
-						<img src="images/mesr.svg" alt="mesr logo" style="height: 180px; margin: 0 auto 0rem 1em; background: transparent;" class="mesr-logo">
+					<div style="float:left;">
+						<img src="images/mesr.svg" alt="mesr logo" style="height:180px; margin:0 auto 0rem 1em; background:transparent;" class="mesr-logo">
 					</div>
-					<div style="float:left;display:block;marin:auto">
-						<div style='font-size:1.2em'> Mon titre avec des mots
-							<span style='font-weight:900'>importants</span>
+					<div style="float: left; display:block; margin:auto">
+						<div style="font-size:1.2em;"> Mon titre avec des mots
+							<span style="font-weight:900;">importants</span>
 						</div>
 					</div>
-					<div style="float:right;margin-top:2rem">
-						<p style='font-size:0.6em;margin-top:0;margin-bottom:0.5rem;'>Noms</p>
-						<p style='font-size:0.6em;margin-top:0;margin-bottom:0.2rem;'>Département des outils d'aide</p>
-						<p style='font-size:0.6em;margin-top:0;margin-bottom:0.5rem;'>à la décision - SIES - MESR</p>
+					<div style="float:right; margin-top:2rem;">
+						<p style="font-size:0.6em; margin-top:0; margin-bottom:0.5rem;">Noms</p>
+						<p style="font-size:0.6em; margin-top:0; margin-bottom:0.2rem;">Département des outils d'aide</p>
+						<p style="font-size:0.6em; margin-top:0; margin-bottom:0.5rem;">à la décision - SIES - MESR</p>
 						</pre>
 					</div>
 				</section>
@@ -64,31 +55,27 @@
 				<section>
 					<h2>Contexte</h2>
 					<ul>
-					<li>Bla</li>
-
-					<li>Bla <ul>
-							<li>bla</li>
+						<li>Bla</li>
+						<li>Bla
+							<ul>
+								<li>bla</li>
 							</ul>
-					</li>
+						</li>
 					</ul>
-
 				</section>
 
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
 						<h2>Vertical Slides</h2>
-
-
 						<div class="twocolumn">
-    <div>
-      Column 1
-    </div>
-    <div>
-      Column two
-    </div>
-  </div>
-
+							<div>
+								Column 1
+							</div>
+							<div>
+								Column two
+							</div>
+						</div>
 						<p>Slides can be nested inside of each other.</p>
 						<p>Use the <em>Space</em> key to navigate through all slides.</p>
 						<br>
@@ -446,11 +433,13 @@
 					<p>
 						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
 					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.on( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
+					<pre>
+						<code class="javascript" data-trim contenteditable style="font-size: 18px;">
+							Reveal.on( 'customevent', function() {
+								console.log( '"customevent" has fired' );
+							} );
+						</code>
+					</pre>
 				</section>
 
 				<section>
@@ -494,13 +483,13 @@ Reveal.on( 'customevent', function() {
 			// Also available as an ES module, see:
 			// https://revealjs.com/initialization/
 			Reveal.initialize({
-				controls: true,
-				progress: true,
 				center: true,
+				controls: true,
 				hash: true,
-
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+				plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight],
+				progress: true,
+				slideNumber: 'c/t',
 			});
 
 		</script>
