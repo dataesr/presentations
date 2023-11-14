@@ -1,309 +1,420 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-		<title>Percolation - 15/11/2023</title>
-		<meta name="description" content="Presentation for OSX">
-		<meta name="author" content="Anne L'Hôte">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-		<style>
-			:root {
-				--r-link-color: rgba(0, 0, 145, 0.75);
-			}
-			.col {
-				flex: 1;
-			}
-			.container {
-				display: flex;
-			}
-			.reveal .slide-number {
-				background-color: rgba(0, 0, 145, 0.75);
-				left: 8px;
-				right: auto;
-			}
-			.twocolumn {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				grid-gap: 10px;
-				text-align: left;
-			}
-      .tag {
-        border-radius: 15px;
-        padding: 5px;
-      }
-      .criterion {
-        background-color: #c9e3fc;
-      }
-      .strategy {
-        background-color: #a0cffb;
-      }
-      .strategy_family {
-        background-color: #7abafa;
-      }
-      .strategies {
-        background-color: #4da6f8;
-      }
-		</style>
-	</head>
+<head>
+  <meta charset="utf-8">
+  <title>Percolation - 15/11/2023</title>
+  <meta name="description" content="Presentation for OSX">
+  <meta name="author" content="Anne L'Hôte">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css">
+  <style>
+    :root {
+      --r-link-color: rgba(0, 0, 145, 0.75);
+    }
 
-	<body>
-		<div class="reveal">
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<div style="float:left;">
-						<img src="images/mesr.svg" alt="mesr logo" style="height:180px; margin:0 auto 0rem 1em; background:transparent;" class="mesr-logo">
-					</div>
-					<div style="float:left; display:block; margin:auto">
-						<div style="font-size:1.2em">La percolation avec Elasticsearch pour aligner un référentiel</div>
-					</div>
-					<div style="float:right; margin-top:2rem;">
-						<p style="font-size:0.6em; margin-top:0; margin-bottom:0.5rem;">
-							Anne L'Hôte
-						</p>
-						<p style="font-size:0.6em; margin-top:0; margin-bottom:0.2rem;">
-							Département des outils d'aide
-						</p>
-						<p style="font-size:0.6em; margin-top:0; margin-bottom:0.5rem;">
-							à la décision - SIES - MESR
-						</p>
-            <img src="images/CC0.jpeg" alt="licence" style="width: 100px;">
-					</div>
-				</section>
+    .col {
+      flex: 1;
+    }
 
-				<section>
+    .container {
+      display: flex;
+    }
 
-					<section>
-						<h2>Publication scientifique</h2>
-            <img src="images/percolation_scientific_publication_1.png" alt="publication scientifique" style="width:80%; border: 1px black solid;">
-					</section>
+    .reveal .slide-number {
+      background-color: rgba(0, 0, 145, 0.75);
+      left: 8px;
+      right: auto;
+    }
 
-					<section>
-						<h2>Publication scientifique</h2>
-            <div class="twocolumn">
-              <div style="width: 200%;">
-                <img src="images/percolation_scientific_publication_2.png" alt="publication scientifique" style="border: 1px black solid;">
-              </div>
-              <div style="padding-left: 100%; font-size: 30px;">
-                <ul>
-                  <li>Titre</li>
-                  <li>Auteur(s)</li>
-                  <li><b>Affiliation(s)</b></li>
-                  <li>Date de publication</li>
-                  <li>Résumé</li>
-                  <li>Mots-clés</li>
-                  <li>...</li>
-                </ul>
-              </div>
-            </div>
-					</section>
+    .twocolumn {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+      text-align: left;
+    }
 
-          <section>
-						<h2 style="position: relative; z-index: 1;">Publication scientifique</h2>
-            <div class="twocolumn">
-              <div>
-                <img src="images/percolation_affiliation_1.png" alt="affiliation" style="width: 75%; transform: rotate(-30deg);">
-                <img class="fragment" src="images/percolation_affiliation_2.png" alt="affiliation" style="width: 100%;">
-                <img class="fragment" src="images/percolation_affiliation_3.png" alt="affiliation" style="width: 100%;">
-              </div>
-              <div>
-                <img class="fragment" src="images/percolation_affiliation_4.png" alt="affiliation" style="margin-left: -100px; width: 150%;">
-                <img class="fragment" src="images/percolation_affiliation_5.png" alt="affiliation" style="width: 100%;">
-                <img class="fragment" src="images/percolation_affiliation_6.png" alt="affiliation" style="width: 100%;">
-              </div>
-            </div>
-          </section>
+    .tag {
+      border-radius: 15px;
+      padding: 5px;
+    }
 
-          <section>
-						<h2>Publication scientifique</h2>
-            <div>
-              <h3>Les limites ⛔</h3>
-              <ul>
-                <li>Champ texte libre (<i>Centre Nationale de la Recherche Scientifique</i>)</li>
-                <li>Multilinguisme (<i>French National Centre for Scientific Research</i>)</li>
-                <li>Acronyme, alias (<i>CNRS</i>)</li>
-                <li>Evolution du paysage de l'ESR (fusion, fermeture, renommage)</li>
-              </ul>
-            </div>
-          </section>
+    .criterion {
+      background-color: #c9e3fc;
+    }
+
+    .strategy {
+      background-color: #a0cffb;
+    }
+
+    .strategy_family {
+      background-color: #7abafa;
+    }
+
+    .strategies {
+      background-color: #4da6f8;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+      <section>
+        <div style="float:left;">
+          <img src="images/mesr.svg" alt="mesr logo"
+            style="height:180px; margin:0 auto 0rem 1em; background:transparent;" class="mesr-logo">
+        </div>
+        <div style="float:left; display:block; margin:auto">
+          <div style="font-size:1.2em">La percolation avec Elasticsearch pour aligner un référentiel</div>
+        </div>
+        <div style="float:right; margin-top:2rem;">
+          <p style="font-size:0.6em; margin-top:0; margin-bottom:0.5rem;">
+            Anne L'Hôte
+          </p>
+          <p style="font-size:0.6em; margin-top:0; margin-bottom:0.2rem;">
+            Département des outils d'aide
+          </p>
+          <p style="font-size:0.6em; margin-top:0; margin-bottom:0.5rem;">
+            à la décision - SIES - MESR
+          </p>
+          <img src="images/CC0.jpeg" alt="licence" style="width: 100px;">
+        </div>
+      </section>
+
+      <section>
+
+        <section>
+          <h2>Publication scientifique</h2>
+          <img src="images/percolation_scientific_publication_1.png" alt="publication scientifique"
+            style="width:80%; border: 1px black solid;">
         </section>
 
         <section>
-          <section>
-            <h2>Un référentiel : Research Organization Registry (ROR)</h2>
-            <ul>
-              <li>Structures de recherche</li>
-              <li>International</li>
-              <li>Récent (2019)</li>
-              <li>Open data (CC0)</li>
-              <li>Plus de 100 000 structures</li>
-            </ul>
-          </section>
+          <h2>Publication scientifique</h2>
+          <div class="twocolumn">
+            <div style="width: 200%;">
+              <img src="images/percolation_scientific_publication_2.png" alt="publication scientifique"
+                style="border: 1px black solid;">
+            </div>
+            <div style="padding-left: 100%; font-size: 30px;">
+              <ul>
+                <li>Titre</li>
+                <li>Auteur(s)</li>
+                <li><b>Affiliation(s)</b></li>
+                <li>Date de publication</li>
+                <li>Résumé</li>
+                <li>Mots-clés</li>
+                <li>...</li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
-          <section>
-            <h2>Un référentiel (ROR)</h2>
+        <section>
+          <h2 style="position: relative; z-index: 1;">Publication scientifique</h2>
+          <div class="twocolumn">
+            <div>
+              <img class="fragment" src="images/percolation_affiliation_1.png" alt="affiliation"
+                style="transform: rotate(-30deg); width: 75%;">
+              <img class="fragment" src="images/percolation_affiliation_2.png" alt="affiliation"
+                style="margin-top: -50px; width: 100%;">
+            </div>
+            <div>
+              <img class="fragment" src="images/percolation_affiliation_4.png" alt="affiliation"
+                style="margin-left: -100px; width: 150%;">
+              <img class="fragment" src="images/percolation_affiliation_5.png" alt="affiliation"
+                style="margin-left: -50px; margin-top: -100px; transform: rotate(30deg); width: 100%;">
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Publication scientifique</h2>
+          <div>
+            <div>Les limites ⛔</div>
+            <ul>
+              <li>Champ texte libre (<em>Centre Nationale de la Recherche Scientifique</em>)</li>
+              <li>Multilinguisme (<em>French National Centre for Scientific Research</em>)</li>
+              <li>Acronyme, alias (<em>CNRS</em>)</li>
+              <li>Evolution du paysage de l'ESR (fusion, fermeture, renommage)</li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h2>Un référentiel : Research Organization Registry (ROR)</h2>
+          <ul>
+            <li>Structures de recherche</li>
+            <li>International</li>
+            <li>Récent (2019)</li>
+            <li>Open data (CC0)</li>
+            <li>Plus de 100 000 structures</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Un référentiel (ROR)</h2>
+          <div>
+            <div>Site web</div>
             <a href="https://ror.org/02feahw73" target="_blank">
               <img src="images/percolation_ror.png" alt="RoR">
             </a>
-          </section>
-
-          <section>
-            <h2>Un référentiel (ROR)</h2>
-            <a href="https://api.dev.ror.org/v2/organizations/02feahw73" target="_blank">
-              <img src="images/percolation_ror_api.png" alt="RoR">
-            </a>
-          </section>
+          </div>
         </section>
 
         <section>
-					<div>
-            <h2>Et maintenant ?</h2>
-            <div>Comment faire le lien entre un texte libre et un référentiel ?</div>
-            <div>🤝</div>
-					</div>
-				</section>
+          <h2>Un référentiel (ROR)</h2>
+          <div>
+            <div>API</div>
+            <a href="https://api.dev.ror.org/v2/organizations/02feahw73" target="_blank">
+              <img src="images/percolation_ror_api.png" alt="RoR">
+            </a>
+          </div>
+        </section>
 
         <section>
-          <section>
-            <div>
-              <h2>Elasticsearch !</h2>
-              <div>Et son percolate query</div>
-              <div>🎉</div>
-            </div>
-          </section>
-          
-          <section>
-            <h2>Elasticsearch</h2>
-            <blockquote>
-              &ldquo;The percolate query can be used to match queries stored in an index. The percolate query
-              itself contains the document that will be used as query to match with the stored queries.&ldquo;
-            </blockquote>
-            <div>selon la <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-percolate-query.html" target="_blank">documentation</a></div>
-          </section>
+          <h2>Un référentiel (ROR)</h2>
+          <div>
+            <div>Data dump</div>
+            <a href="https://zenodo.org/records/10086202" target="_blank">
+              <img src="images/percolation_ror_data_dump.png" alt="RoR data dump">
+            </a>
+          </div>
+        </section>
+      </section>
 
-          <section>
-            <h2>Elasticsearch</h2>
-            <img src="images/percolation_elasticsearch_indices.png" alt="elasticsearch indices" style="width: 100%;">
-          </section>
+      <section>
+        <div>
+          <h2>Et maintenant ?</h2>
+          <div>Comment faire le lien entre un texte libre et un référentiel ?</div>
+          <div>🤝</div>
+        </div>
+      </section>
 
-          <section>
-            <h2>Elasticsearch</h2>
-            <div>
-              <h3>Liste de critères disponibles pour RoR</h3>
-              <ul>
-                <li>ror_acronym</li>
-                <li>ror_acronym_unique</li>
-                <li>ror_city</li>
-                <li>ror_country</li>
-                <li>ror_country_code</li>
-                <li>ror_grid_id</li>
-                <li>ror_id</li>
-                <li>ror_name</li>
-                <li>ror_name_unique</li>
-              </ul>
-            </div>
-          </section>
+      <section>
+        <section>
+          <div>
+            <h2>Elasticsearch !</h2>
+            <div>Et son percolate query</div>
+            <div>🎉</div>
+          </div>
+        </section>
 
-          <section>
-            <h2>elasticsearch</h2>
-            <div style="font-size: 30px;">
-              <div>
-                <span class="tag strategy">stratégie</span> : <span class="tag criterion">critère_01</span> AND <span class="tag criterion">critère_02</span> AND <span class="tag criterion">critère_03</span>
-              </div>
-              <div>
-                <span class="tag strategy_family">famille de stratégies</span> : <span class="tag strategy">stratégie_01</span> OR <span class="tag strategy">stratégie_02</span> OR <span class="tag strategy">stratégie_03</span>
-              </div>
-              <div>
-                <span class="tag strategies">stratégies</span>
-              </div>
-            </div>
-          </section>
+        <section>
+          <h2>Elasticsearch</h2>
+          <blockquote>
+            &ldquo;The percolate query can be used to match queries stored in an index. The percolate query
+            itself contains the document that will be used as query to match with the stored queries.&ldquo;
+          </blockquote>
+          <div>selon la <a
+              href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-percolate-query.html"
+              target="_blank">documentation</a></div>
+        </section>
 
-          <section>
-            <h2>Elasticsearch</h2>
-            <div>
-              <h3>Résultats 📈</h3>
-              <table>
-                <thead>
-                  <tr>
-                    <th>matcher</th>
-                    <th>precision</th>
-                    <th>recall</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>country</td>
-                    <td>0.9953</td>
-                    <td>0.9690</td>
-                  </tr>
-                  <tr>
-                    <td>grid</td>
-                    <td>0.7946</td>
-                    <td>0.5944</td>
-                  </tr>
-                  <tr>
-                    <td>rnsr</td>
-                    <td>0.9654</td>
-                    <td>0.8192</td>
-                  </tr>
-                  <tr>
-                    <td>ror</td>
-                    <td>0.8891</td>
-                    <td>0.2356</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-				</section>
-
-				<section>
-          <section>
-            <h2>Ressources</h2>
+        <section>
+          <h2>Elasticsearch</h2>
+          <div style="font-size: 35px;">
+            <div>Liste des métadonnées disponibles dans l'API</div>
             <ul>
-              <li>🐙 <a href="https://github.com/dataesr/affiliation-matcher" target="_blank">Code (Github)</a></li>
-              <li>🐋 <a href="https://github.com/dataesr/affiliation-matcher/pkgs/container/affiliation-matcher" target="_blank">Image Docker</a></li>
-              <li>🖋️ <a href="https://hal.science/hal-03365806" target="_blank">Publication (preprint)</a></li>
-              <li>🔗 <a href="https://affiliation-matcher.staging.dataesr.ovh/" target="_blank">Site démo</a></li>
+              <li>ror_acronym</li>
+              <li>ror_acronym_unique</li>
+              <li>ror_city</li>
+              <li>ror_country</li>
+              <li>ror_country_code</li>
+              <li>ror_grid_id</li>
+              <li>ror_id</li>
+              <li>ror_name</li>
+              <li>ror_name_unique</li>
             </ul>
-          </section>
+          </div>
+        </section>
 
-          <section>
-            <div>Des questions ?</div>
-            <div>anne.lhote@recherche.gouv.fr</div>
-          </section>
-				</section>
-			</div>
-		</div>
+        <section>
+          <h2>Elasticsearch</h2>
+          <div>
+            <div>Construction des index ES liés</div>
+            <img src="images/percolation_elasticsearch_indices.png" alt="elasticsearch indices" style="width: 100%;">
+          </div>
+        </section>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/zoom/zoom.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/search/search.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// Also available as an ES module, see:
-			// https://revealjs.com/initialization/
-			Reveal.initialize({
-				center: true,
-				controls: true,
-				hash: true,
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight],
-				progress: true,
-				slideNumber: 'c/t',
-			});
-		</script>
+        <section>
+          <h2>Elasticsearch</h2>
+          <div>
+            <div>Indexation des données</div>
+            <img src="images/percolation_elasticsearch_response.png" alt="elasticsearch indices" style="width: 100%;">
+          </div>
+        </section>
 
-	</body>
+        <section>
+          <h2>Elasticsearch</h2>
+          <div>
+            <div>Requête ES pour un critère donné (city)</div>
+            <span><em>https://cluster.elasticsearch/ror_city/_search</em></span>
+            <pre style="font-size: 15px;">
+                <code>{
+    "query": {
+        "percolate": {
+            "field": "query",
+            "document": {
+                "content": "cnrs paris france"
+            }
+        }
+    },
+    "_source": {
+        "includes": [
+            "rors"
+        ]
+    },
+    "highlight": {
+        "fields": {
+            "content": {
+                "type": "unified"
+            }
+        }
+    }
+  }</code>
+              </pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>Elasticsearch</h2>
+          <div style="font-size: 30px;">
+            <div>Mise en place de stratégies</div>
+            <div style="margin-bottom: 20px;">
+              <span class="tag strategy">stratégie</span> : <span class="tag criterion">critère_01</span> AND <span
+                class="tag criterion">critère_02</span> AND <span class="tag criterion">critère_03</span>
+            </div>
+            <div style="margin-bottom: 20px;">
+              <span class="tag strategy_family">famille de stratégies</span> : <span
+                class="tag strategy">stratégie_01</span> OR <span class="tag strategy">stratégie_02</span> OR <span
+                class="tag strategy">stratégie_03</span>
+            </div>
+            <div style="margin-bottom: 20px;">
+              <span class="tag strategies">stratégies</span> : <span
+                class="tag strategy_family">famille_de_stratégies_01</span> THEN <span
+                class="tag strategy_family">famille_de_stratégies_02</span>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Elasticsearch</h2>
+          <div>
+            <div>Les stratégies par défaut pour RoR</div>
+            <pre style="font-size: 20px;">
+              <code>DEFAULT_STRATEGIES = [
+  [['ror_id']],
+  [['ror_grid_id']],
+  [['ror_name', 'ror_supervisor_name', 'ror_acronym',
+      'ror_city_nuts_level2', 'ror_country'],
+    ['ror_name', 'ror_supervisor_name', 'ror_acronym',
+      'ror_city_zone_emploi', 'ror_country']
+  ],
+  [['ror_name', 'ror_acronym', 'ror_city', 'ror_country'],
+    ['ror_name', 'ror_acronym', 'ror_city_zone_emploi',
+      'ror_country']
+  ],
+  [['ror_name', 'ror_country', 'ror_web_url']],
+  ...
+]</code>
+            </pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>Elasticsearch</h2>
+          <div>
+            <div>Résultats 📈</div>
+            <table>
+              <thead>
+                <tr>
+                  <th>matcher</th>
+                  <th>precision</th>
+                  <th>recall</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>country</td>
+                  <td>0.9953</td>
+                  <td>0.9690</td>
+                </tr>
+                <tr>
+                  <td>grid</td>
+                  <td>0.7946</td>
+                  <td>0.5944</td>
+                </tr>
+                <tr>
+                  <td>rnsr</td>
+                  <td>0.9654</td>
+                  <td>0.8192</td>
+                </tr>
+                <tr>
+                  <td>ror</td>
+                  <td>0.8891</td>
+                  <td>0.2356</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h2>Ressources</h2>
+          <ul>
+            <li>🐙 <a href="https://github.com/dataesr/affiliation-matcher" target="_blank">Code (Github)</a></li>
+            <li>🐋 <a href="https://github.com/dataesr/affiliation-matcher/pkgs/container/affiliation-matcher"
+                target="_blank">Image Docker</a></li>
+            <li>🖋️ <a href="https://hal.science/hal-03365806" target="_blank">Publication (preprint)</a></li>
+            <li>🔗 <a href="https://affiliation-matcher.staging.dataesr.ovh/" target="_blank">Site démo</a></li>
+            <li>👀 <a href="https://tinyurl.com/4yvjswvs" target="_blank">Présentation :
+                https://tinyurl.com/4yvjswvs</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <div style="margin-bottom: 50px;">❔ Des questions ?</div>
+          <div>📨 anne.lhote@recherche.gouv.fr</div>
+          <div>📨 bso@recherche.gouv.fr</div>
+          <div>🐦 @annelhote</div>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/zoom/zoom.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/search/search.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script>
+    // Also available as an ES module, see:
+    // https://revealjs.com/initialization/
+    Reveal.initialize({
+      center: true,
+      controls: true,
+      hash: true,
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight],
+      progress: true,
+      slideNumber: 'c/t',
+    });
+  </script>
+
+</body>
+
 </html>
