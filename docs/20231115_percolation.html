@@ -194,11 +194,17 @@
       </section>
 
       <section>
-        <div>
+        <section>
           <h2>Et maintenant ?</h2>
           <div>Comment faire le lien entre un texte libre et un référentiel ?</div>
           <div>🤝</div>
-        </div>
+        </section>
+
+        <section>
+          <h2>Et maintenant ?</h2>
+          <div>L'IA ?</div>
+          <div>Boite noire donc difficile de comprendre la raison des erreurs</div>
+        </section>
       </section>
 
       <section>
@@ -224,17 +230,17 @@
         <section>
           <h2>Elasticsearch</h2>
           <div style="font-size: 35px;">
-            <div>Liste des métadonnées disponibles dans l'API</div>
+            <div>Liste des métadonnées disponibles dans RoR</div>
             <ul>
               <li>ror_acronym</li>
-              <li>ror_acronym_unique</li>
               <li>ror_city</li>
               <li>ror_country</li>
               <li>ror_country_code</li>
-              <li>ror_grid_id</li>
               <li>ror_id</li>
               <li>ror_name</li>
-              <li>ror_name_unique</li>
+              <li>ror_supervisor_name</li>
+              <li>ror_web_url</li>
+              <li>...</li>
             </ul>
           </div>
         </section>
@@ -286,11 +292,19 @@
               </pre>
           </div>
         </section>
+        
+        <section>
+          <h2>Elasticsearch</h2>
+          <div>
+            <div>La réponse à la question</div>
+            <img src="images/percolation_elasticsearch_search.png" alt="elasticsearch indices" style="width: 90%; ">
+          </div>
+        </section>
 
         <section>
           <h2>Elasticsearch</h2>
           <div style="font-size: 30px;">
-            <div>Mise en place de stratégies</div>
+            <div style="margin-bottom: 20px;">Mise en place de stratégies</div>
             <div style="margin-bottom: 20px;">
               <span class="tag strategy">stratégie</span> : <span class="tag criterion">critère_01</span> AND <span
                 class="tag criterion">critère_02</span> AND <span class="tag criterion">critère_03</span>
@@ -312,8 +326,9 @@
           <h2>Elasticsearch</h2>
           <div>
             <div>Les stratégies par défaut pour RoR</div>
-            <pre style="font-size: 20px;">
-              <code>DEFAULT_STRATEGIES = [
+            <a href="https://github.com/dataesr/affiliation-matcher/blob/master/project/server/main/match_ror.py#L5-L38" target="_blank">
+              <pre style="font-size: 20px;">
+                <code>DEFAULT_STRATEGIES = [
   [['ror_id']],
   [['ror_grid_id']],
   [['ror_name', 'ror_supervisor_name', 'ror_acronym',
@@ -328,7 +343,28 @@
   [['ror_name', 'ror_country', 'ror_web_url']],
   ...
 ]</code>
-            </pre>
+              </pre>
+            </a>
+          </div>
+        </section>
+
+        <section>
+          <h2>Elasticsearch</h2>
+          <a href="https://affiliation-matcher.staging.dataesr.ovh/" target="_blank">
+            <img src="images/percolation_elasticsearch_ui.png" alt="elasticsearch indices" style="width: 90%; border: 1px black solid;">
+          </a>
+        </section>
+
+        <section>
+          <h2>Elasticsearch</h2>
+          <div>
+            <div>S'applique à d'autres référentiels</div>
+            <ul>
+              <li>country (basé sur pycountry)</li>
+              <li>Grid.ac (obsolète)</li>
+              <li>RNSR</li>
+              <li>...</li>
+            </ul>
           </div>
         </section>
 
@@ -368,6 +404,9 @@
               </tbody>
             </table>
           </div>
+        </section>
+
+        <section data-background="http://i.giphy.com/uLYTKQE2cftpLFMpEG.gif">
         </section>
       </section>
 
