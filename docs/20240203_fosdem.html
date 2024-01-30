@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>French Open Science Monitor - FOSDEM24</title>
+
+  <meta name="description"
+    content="Presentation of the French Open Science Monitor at fosdem 2024 on February 3, 2024">
+  <meta name="abstract"
+    content="Le Baromètre de la science ouverte (BSO) est l’outil d’accompagnement de la politique nationale de science ouverte.
+
+Son originalité réside dans son approche ouverte, sans recours aux sources propriétaires, incompatibles avec le partage de données, la création de services ouverts et la valorisation de la diversité de la production scientifique française.
+Les métadonnées nécessaires à la construction du BSO mais non disponibles directement dans les sources ont été estimées par des techniques d’apprentissage automatique, en particulier pour les affiliations et les champs disciplinaires.
+
+En proposant du code, des données et des services ouverts, le BSO a contribué à la mise en place de dizaines de déclinaisons locales (établissements, laboratoires).
+
+En 2021, une refonte complète du site https://barometredelascienceouverte.esr.gouv.fr/ a été réalisée pour à la fois toucher un public plus large et aussi fournir des indicateurs plus détaillés.
+
+D’abord centré sur la problématique de l’accès ouvert aux publications, le BSO étend son périmètre d'analyse en fonction de la politique publique menée, notamment en santé avec le suivi de l’ouverture des essais cliniques, et bientôt avec les codes et données de la recherche.">
+  <meta name="author" content="Eric Jeangirard">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+  <style>
+    .container {
+      display: flex;
+    }
+
+    .col {
+      flex: 1;
+    }
+
+    .twocolumn {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+      text-align: left;
+    }
+
+    .reveal .slide-number {
+      background-color: rgba(0, 0, 145, 0.75);
+    }
+
+    :root {
+      --r-link-color: rgba(0, 0, 145, 0.75);
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+      <section>
+        <div style="float:left;">
+          <img src="images/mesr.svg" alt="mesr logo"
+            style="height: 180px; margin: 0 auto 0 1em; background: transparent;" class="mesr-logo">
+        </div>
+        <div style="float:left;display:block;margin:auto">
+          <div style='font-size:1.2em'>
+            The French Open Science Monitor
+          </div>
+          <div style='font-size:1em'>
+            steering the science based on open bibliographic databases
+          </div>
+        </div>
+        <div style="float:left;margin-top:2rem;text-align:left;">
+          <p style='font-size:0.6em;margin-top:0;margin-bottom:0.5rem;'>
+            February 3, 2024
+          </p>
+          <p style='font-size:0.6em;margin-top:0;margin-bottom:0.5rem;'>
+            FOSDEM
+          </p>
+        </div>
+        <div style="float:right;margin-top:2rem;text-align:right;">
+          <p style='font-size:0.6em;margin-bottom:0.5rem;margin-top:0;'>Anne L'Hôte</p>
+          <img src="images/CC0.jpeg" alt="licence" style="width: 100px;">
+        </div>
+      </section>
+
+      <section>
+        <h2 style='font-size:1.2em'>Key points</h2>
+        <div style='font-size:0.85em'>
+          The French Open Science Monitor (FOSM) supports public policy on open science
+          <ul style='font-size:0.75em;line-height: 170%;'>
+            <br>
+            <li>
+              📈 since 2018, <span style='font-weight:900'>+ more than 29 open access points in 5 years</span>. Public
+              policies target 100% by 2030.
+            </li>
+            <li>
+              <span style='font-weight:900'>without using proprietary sources</span> (incompatible with sharing,
+              creation of open and non-representative services)
+            </li>
+            <li>
+              🤖 estimated by <span style='font-weight:900'>automatic learning</span> for missing metadata
+            </li>
+            <li>
+              📊 strategy validated by the study by L. Chaignon and D. Egret (2022)
+            </li>
+            <li>
+              🔍 sensitivity of the AO rate to sources and to the observation date
+            </li>
+            <li>
+              🪆<span style='font-weight:9000'>open code, data and services</span>, <span style='font-weight:900'>dozens
+                of local variations</span>
+            </li>
+            <li>
+              🖥️ <span style='font-weight:900'>website redesign</span> in 2021 <a
+                href='https://frenchopensciencemonitor.esr.gouv.fr/'>frenchopensciencemonitor.esr.gouv.fr</a>
+            </li>
+            <li>
+              🧭 <span style='font-weight:900'>extended scope of analysis</span> in line with public policy (including
+              clinical trials, codes and future research data)
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 style='font-size:1.2em'>The FOSM is a command for monitoring and steering public policy</h2>
+        <div style='font-size:0.85em'>
+          <ul style='font-size:0.75em;line-height: 180%;'>
+            <br>
+            <li>
+              📔 Respecting several expectations, in particular
+              <ul style='line-height: 120%;'>
+                <li>taking into account <span style='font-weight:900'>bibliodiversity</span></li>
+                <li>sharing and openness to encourage <span style='font-weight:900'>transparency and reproducibility
+                </li>
+              </ul>
+            </li>
+            <li>⏳ That adapts to <span style='font-weight:900'>constraints and changes in public policy</span>
+              <ul style='line-height: 120%;'>
+                <li>first snapshot of the open access situation at the end of 2018</li>
+                <li>gradual extension of indicators and scope</li>
+              </ul>
+            </li>
+            <br />
+            <li class="fragment fade-in">
+              🧗 These constraints led us to <span style='font-weight:900'>choose the difficult path</span>
+              <ul style='line-height: 120%;'>
+                <li>at the methodological level, in particular for <span style='font-weight:900'>detection of
+                    affiliations
+                    and disciplinary fields</span></li>
+                <li>at the operational level, with a <span style='font-weight:900'>IT infrastructure
+                    adapted</span></li>
+            </li>
+        </div>
+      </section>
+
+      <section>
+        <h2 style='font-size:1.2em'>A modular approach ...</h2>
+        <div style='font-size:0.85em'>
+          <ul style='font-size:0.75em;line-height: 180%;'>
+            <br>
+            <img src="https://github.com/dataesr/bso-publications/blob/main/doc/flow_chart_publications.png?raw=true"
+              alt="dataesr github" style="width:80%">
+        </div>
+      </section>
+
+      <section>
+        <h2 style='font-size:1.2em'>... capitalizing on and complementing existing open sources</h2>
+        <div style='display:block;font-size:0.4em;float:right'>🏗️ Built at MESR within the FOSM framework</div>
+        <div style='font-size:0.85em'>
+          <ul style='font-size:0.75em;line-height: 180%;'>
+            <li><span style='font-weight:900'>🏛️ Affiliations metadata</span></li>
+            <ul>
+              <li>PubMed, Crossref, HAL</li>
+              <li>🏗️ Crawling web pages</li>
+              <li>🏗️ Automatic country detection</li>
+            </ul>
+            <li><span style='font-weight:900'>🔍 Characterization of open access</span></li>
+            <ul>
+              <li>Open access detection: Unpaywall</li>
+              <li>🏗️ Classification of open access types</li>
+            </ul>
+            <li><span style='font-weight:900'>🤖 Thematic classification</span></li>
+            <ul>
+              <li>Training data : Pascal and Francis, Field of Research (FoR)</li>
+              <li>🏗️ Automatic classification models (fastText)</li>
+            </ul>
+        </div>
+      </section>
+      <section>
+        <h2 style='font-size:1.2em'>Comparison with major international databases</h2>
+        <div style='display:block;font-size:0.4em;float:right'>Lauranne Chaignon, Daniel Egret; Identifying scientific
+          publications countrywide and measuring their open access: The case of the French Open Science Monitor (FOSM).
+          Quantitative Science Studies 2022; 3 (1): 18-36. doi: <a href="https://doi.org/10.1162/qss_a_00179"
+            target="_blank">https://doi.org/10.1162/qss_a_00179</a></div>
+        <div style='font-size:0.85em'>
+          <img src='images/bso_benchmark_2019.png' alt='FOSM benchmark' style='width:80%'>
+          <ul>
+            <li>"The open-source strategy used by the FOSM effectively identifies the vast majority of publications with
+              a persistent identifier (DOI) for Open Science monitoring."
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 style='font-size:1.2em'>Sensitivity of open access rate measurement (1/3)</h2>
+        <div style='display:block;font-size:0.4em;float:right'>Lauranne Chaignon, Daniel Egret; Identifying scientific
+          publications countrywide and measuring their open access: The case of the French Open Science Monitor (FOSM).
+          Quantitative Science Studies 2022; 3 (1): 18-36. doi: <a href="https://doi.org/10.1162/qss_a_00179"
+            target="_blank">https://doi.org/10.1162/qss_a_00179</a></div>
+        <div style='font-size:0.85em'>
+          <img src='images/bso_benchmark_oa_2019.png' alt='FOSM Open Access rate' style='width:70%'>
+          <div>The OA rate varies according to the source, but the more diversified the source, the lower the
+            sensitivity.
+            greater</div>
+        </div>
+      </section>
+
+      <section>
+        <h2 style='font-size:1.2em'>Sensitivity of open access rate measurement (2/3)</h2>
+        <div>
+          The OA rate varies according to the date of observation (which is rarely specified).
+          <img src='images/bso_web_2.png' alt='FOSM observation dates' style='width:70%'>
+        </div>
+      </section>
+
+      <section>
+        <h2 style='font-size:1.2em'>Sensitivity of open access rate measurement (3/3)</h2>
+        <div style='font-size:0.85em'>
+          <div>Numerous dimensions analyzed in the FOSM: discplines, publication type, languages, distribution platform,
+            etc.
+            platform ...</div>
+          <img src='images/bso_disciplines.png' alt='FOSM analyzed dimensions' style='width:100%'>
+        </div>
+      </section>
+
+      <section>
+        <h2 style='font-size:1.2em'>Information-sharing services for a variety of uses</h2>
+        <div style='font-size:0.85em'>
+          <ul style='font-size:0.75em;line-height: 180%;'>
+            <li><span style='font-weight:900'>"General" audience</span> : website, designed with the help of design
+              agency
+              <a href="https://wedodata.fr/" target="_blank">WeDoData</a> <a
+                href="https://frenchopensciencemonitor.esr.gouv.fr/"
+                target="_blank">frenchopensciencemonitor.esr.gouv.fr</a>
+            </li>
+            <li><span style='font-weight:900'>Demultiplier</span> : to provide the means to build a local variation
+              (establishment, laboratory, etc.) very easily and with the same rendering as the national FOSM (cf. the
+              <a href="https://scienceouverte.univ-lorraine.fr/barometre-lorrain-de-la-science-ouverte/"
+                target="_blank">FOSM local variation for University of Lorraine</a>)
+            </li>
+            <li><span style='font-weight:900'>Data export</span> : dump of datasets <a
+                href="https://data.enseignementsup-recherche.gouv.fr/pages/explorer/?q=bso&sort=modified"
+                target="_blank">available for download</a> in CSV, jsonL</li>
+            <li><span style='font-weight:900'>Academic</span> : detailed methodology <a
+                href="https://hal.archives-ouvertes.fr/hal-03651518" target="_blank">available on HAL</a></li>
+            <li>
+              <span style='font-weight:900'>IT</span> : the <a
+                href="https://github.com/orgs/dataesr/repositories?q=bso&type=&language=&sort=" target="_blank">source
+                code is open</a>
+            </li>
+        </div>
+      </section>
+
+      <section>
+        <h2 style='font-size:1.2em'>New for 2021: new website</h2>
+        <img src='images/bso_web_1.png' alt='bso web 1' style='width:80%'>
+      </section>
+      <section>
+        <h2 style='font-size:1.2em'>New for 2021: analysis by observation date</h2>
+        <img src='images/bso_web_2.png' alt='bso web 2' style='width:75%'>
+      </section>
+      <section>
+        <h2 style='font-size:1.2em'>New for 2021: health section</h2>
+        <img src='images/bso_web_3.png' alt='bso web 3' style='width:80%'>
+      </section>
+      <section>
+        <h2 style='font-size:1.2em'>Next milestones</h2>
+        <div style='font-size:0.85em'>
+          <ul style='font-size:0.75em;line-height: 180%;'>
+            <li>🗄️ Integration of indicators for research data and software codes</li>
+            <li>🧑‍🎓 Integration of indicators for doctoral theses</li>
+            <li>📍 New functions for local variations of the FOSM (funders, HAL identifiers)</li>
+      </section>
+
+    </div>
+
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/zoom/zoom.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/search/search.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script>
+
+    // Also available as an ES module, see:
+    // https://revealjs.com/initialization/
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      center: true,
+      hash: true,
+      slideNumber: 'c/t',
+
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+    });
+    Reveal.configure({ pdfMaxPagesPerSlide: 1 })
+    Reveal.configure({ pdfSeparateFragments: false });
+
+  </script>
+
+</body>
+
+</html>
