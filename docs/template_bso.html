@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TODO_TITLE</title>
+    <meta name="description" content="TODO_DESCRIPTION">
+    <meta name="abstract" content="TODO_ABSTRATCT">
+    <meta name="author" content="TODO_AUTHOR">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    <style>
+      .container {
+        display: flex;
+      }
+
+      .col {
+        flex: 1;
+      }
+
+      .twocolumn {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        text-align: left;
+      }
+
+      .reveal .slide-number {
+        background-color: rgba(0, 0, 145, 0.75);
+      }
+
+      :root {
+        --r-link-color: rgba(0, 0, 145, 0.75);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <div style="float: left;">
+            <img alt="mesr logo" src="images/mesr.svg" style="background: transparent; height: 120px; margin: 0 auto 0 1em;">
+          </div>
+          <div style="display: block; float: left; margin: auto;">
+            <div style="font-size: 1.2em;">
+              TODO_TITLE
+            </div>
+            <div style="font-size: 1em; margin: 15px 0;">
+              TODO_DESCRIPTION
+            </div>
+            <div>
+              <span style="background-color: #334577; border-radius: 5px; float: right; font-size: 0.8em; padding: 2px 12px; text-align: right;">
+                <a href="https://frenchopensciencemonitor.esr.gouv.fr/" target="_blank" style="color: white;">
+                  FrenchOpenScienceMonitor.esr.gouv.fr
+                </a>
+              </span>
+            </div>
+          </div>
+          <div style="float: left; font-size: 0.4em; margin-top: 2rem; text-align: left;">
+            <p style="margin: 0;">
+              TODO_DATE
+            </p>
+            <p style="font-style: italic; margin-top: 0;">
+              TODO_EVENT
+            </p>
+          </div>
+          <div style="float: right; font-size: 0.4em; margin-top: 2rem; text-align: right;">
+            <p style="margin: 0;">
+              TODO_AUTHOR
+            </p>
+            <p style="font-style: italic; margin-top: 0;">
+              TODO_AUTHOR_ROLE
+            </p>
+          </div>
+          <div>
+            <img alt="French Open Science Monitor : Measure the evolution of open science in France"
+              src="images/common_bso_footer_en.png" style="float: left; margin-bottom: 0; max-width: 100%;">
+            <img src="images/CC0.jpeg" alt="licence CC0" style="float: right; margin-top: -0.9em; width: 100px;">
+          </div>
+        </section>
+
+        <section>
+          <section>
+            <h3 style="font-size: 1.2em;">Objectives</h3>
+            <div style="font-size: 0.85em;">
+              <b>National Plan for Open Science</b> in 2018, the monitor has been designed
+              as:
+              <div style="float: left; width: 50%;">
+                <ul style="font-size: 0.75em; line-height: 170%;">
+                  <br>
+                  <li>
+                    👑 a <b>sovereign</b> and <b>evolving</b> tool for <b>assessing the impacts</b> of the open science
+                    public policy
+                    <br />
+                    <br />
+                  </li>
+                  <li>
+                    🔧 a strategic tool to refine and adjust open science <b>public policies</b>
+                    <br />
+                    <br />
+                  </li>
+                  <li>
+                    👩‍🔬 a <b>lever for improving knowledge of French scientific production</b>, beyond the Open Science
+                    aspects
+                  </li>
+                </ul>
+              </div>
+              <div style="float: right; width: 50%;">
+                <img alt="French nation plan for Open Science" src="images/fosdem_national_plan_for_OS.png" style="width: 75%;">
+              </div>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        slideNumber: 'c/t',
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+      });
+      Reveal.configure({ pdfMaxPagesPerSlide: 1 })
+      Reveal.configure({ pdfSeparateFragments: false });
+    </script>
+  </body>
+</html>
