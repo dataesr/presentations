@@ -7,7 +7,7 @@
 * [20240203 - FOSDEM - The French Open Science Monitor: Steering the science based on open bibliographic databases](https://dataesr.github.io/presentations/20240203_fosdem.html)
 * [20240228 - Baromètre de la science ouverte: Edition 2023](https://dataesr.github.io/presentations/20240228_bso_edition_2023.html)
 * [20240313 - Baromètre de la science ouverte 2023 : Webinaire Club Utilisateurs](https://dataesr.github.io/presentations/20240313_bso_webinaire_club_utilisateurs.html)
-
+* [20240311 - TEDS : Edition 2024](https://dataesr.github.io/presentations/20240311_teds.html)
 ## Run server
 
 `python3 -m http.server 9000`
