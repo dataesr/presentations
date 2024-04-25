@@ -15,4 +15,4 @@
 
 ## Run server
 
-`python3 -m http.server -d web`
+`python3 -m http.server -d docs`
