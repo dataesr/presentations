@@ -11,6 +11,7 @@
 * [20240313 - Baromètre de la science ouverte 2023 : Webinaire Club Utilisateurs](https://dataesr.github.io/presentations/20240313_bso_webinaire_club_utilisateurs.html)
 * [20240311 - TEDS : Edition 2024](https://dataesr.github.io/presentations/20240311_teds.html)
 * [20240412 - Brevets TEDS : Edition 2024](https://dataesr.github.io/presentations/20240412_brevets_teds.html)
+* [20240516 - Works Magnet](https://dataesr.github.io/presentations/20240516_works_magnet.html)
 
 
 ## Run server
