@@ -16,12 +16,20 @@
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
     <link rel="stylesheet" href="style.css">
     <style>
+      :root {
+        --r-link-color: rgba(0, 0, 145, 0.75);
+      }
+
+      .center {
+        justify-items: center;
+      }
+
       .reveal .slide-number {
         background-color: rgba(0, 0, 145, 0.75);
       }
 
-      :root {
-        --r-link-color: rgba(0, 0, 145, 0.75);
+      i {
+        font-style: italic;
       }
     </style>
   </head>
@@ -73,7 +81,7 @@
 
         <section>
           <section>
-            <h3 style="font-size: 1.2em;">Ce qui n'est plus à faire</h3>
+            <h3 style="font-size: 1.2em;">Context</h3>
             <div style="font-size: 0.85em;">
               <div>
                 Depuis 2018, le baromètre de la science ouverte s'enrichit de nouveaux objets d'étude:
@@ -105,57 +113,187 @@
           </section>
 
           <section>
+            <h3 style="font-size: 1.2em;">Context</h3>
             <div>
-              Méthodologie d'analyse des données de la recherche et code et logiciels est basée sur les PDF téléchargés
+              Au niveau national, notre <a href="https://barometredelascienceouverte.esr.gouv.fr/a-propos/methodologie" target="_blank">
+              méthodologie</a> d'analyse des données de la recherche est basée sur les publications françaises :
+            </div>
+            <div style="margin: auto; width: 80%;">
+              <img alt="Open access rate of scientific publications in France" src="images/works_magnet_bso.png">
+            </div>
+          </section>
+
+          <section>
+            <h3 style="font-size: 1.2em;">Context</h3>
+            <div style="font-size: 0.85em;">
+              <div>
+                L'université de Lorraine propose une 
+                <a href="https://gitlab.com/Cthulhus_Queen/barometre_scienceouverte_universitedelorraine/" target="_blank">méthodologie</a> 
+                pour retrouver les publications de son institution / laboratoire
+              </div>
+              <div style="margin: auto; width: 80%;">
+                <img alt="Open access rate of scientific publications for university of Lorraine" src="images/works_magnet_publications_ul.png" />
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h3 style="font-size: 1.2em;">Context</h3>
+            <div>🕵️ Comment retrouver les jeux de données de son institution / laboratoire ?</div>
+          </section>
+
+          <section>
+            <h3 style="font-size: 1.2em;">Context</h3>
+            <div>
+              🚩 Dans les entrepôts des jeux de données, les affiliations sont en général peu ou pas renseignées
             </div>
             <br>
             <div>
-              Quid de l'approche par entrepôts ?
-            </div>
-          </section>
-
-          <section>
-            <h3>Limitations</h3>
-            <div style="font-size: 0.85em;">
-              <div>Pour retrouver ses propres publications, l'Université de Lorraine propose cette méthodologie</div>
-              <div>
-                <a href="https://gitlab.com/Cthulhus_Queen/barometre_scienceouverte_universitedelorraine/" target="_blank">
-                  -> ici <-
-                </a>
-              </div>
-              <div>🕵️</div>
-              <div>Comment retrouver ses propres jeux de données ?</div>
+              🏫 Tout particulièrement les affiliations
             </div>
           </section>
         </section>
 
-        <section>🧲</section>
+        <section>
+          <h3 style="font-size: 1.2em;">🧲 Works Magnet 🧲</h3>
+        </section>
 
         <section>
           <section>
+            <h3>Sources</h3>
+            <div style="font-size: 0.7em; font-style: italic; text-align: left;">
+              On capitalise ici sur le travail précédemment réalisé dans le cadre du baromètre de la science ouverte
+            </div>
+            <ul>
+              <li>OpenAlex</li>
+              <li>Baromètre de la science ouverte</li>
+              <ul>
+                <li>CrossRef</li>
+                <li>HAL</li>
+                <li>Datacite</li>
+              </ul>
+            </ul>
+            <div style="font-size: 0.7em; font-style: italic; text-align: left;">
+              On récolte ici, <b>distinctement</b>, publications et jeux de données
+            </div>
+          </section>
+
+          <section>
             <h3>Fonctionnalités - Recherche</h3>
             <div>
+              <ol>
+                <li>Champ de recherche par affiliations</li>
+                <li>Filtrage par année de publication</li>
+                <li>Filtrage par type de production</li>
+              </ol>
+            </div>
+          </section>
+
+          <section>
+            <h3>Fonctionnalités - Recherche</h3>
+            <h4>Champ de recherche par affiliations</h4>
+            <div>
+              <img alt="affiliations search field" src="images/works_magnet_search_text.png" />
               <ul>
-                <li>Objets recherchés: publications et / ou jeux de données</li>
-                <li>Recherche par chaine(s) de caractères</li>
-                <li>Recherche par RoR(s)</li>
-                <li>Filtre temporel</li>
+                <li>
+                  Champ pouvant avoir plusieurs valeurs.
+                </li>
+                <li>
+                  Sont alors ramenées l'ensemble des productions mentionnant au moins l'une de ces affiliations.
+                </li>
+                <li>
+                  Peut être saisi: un nom (ex: <i>Université de Lorraine</i> ou <i>loria</i>) ...
+                </li>
+                <li>
+                  ... ou un RoR (ex: <i>https://ror.org/04vfs2w97</i> ou <i>04vfs2w97</i>).
+                </li>
               </ul>
             </div>
           </section>
 
           <section>
-            <h3>Fonctionnalités - Actions</h3>
+            <h3>Fonctionnalités - Recherche</h3>
+            <h4>Champ de recherche par affiliations</h4>
+            <div>
+              <img alt="affiliations search field - RoR" src="images/works_magnet_search_ul.png" />
+              <br>
+              Pour chaque RoR saisi,
+              <ul>
+                <li>
+                  Les différents noms et acronymes renseignés dans RoR pour cet identifiant sont automatiquement
+                  ajoutés à la recherche.
+                </li>
+                <li>
+                  Il est possible de retrouver les RoR "enfants" de cet identifiant, ainsi que leurs noms et
+                  acronymes pour les ajouter à la recherche.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h3>Fonctionnalités - Recherche</h3>
+            <h4>Filtrage par année de publication</h4>
+            <img alt="affiliations search years" src="images/works_magnet_search_years.png" />
             <div>
               <ul>
-                <li>Améliorer la correspondance RoR dans OpenAlex</li>
-                <li>Retrouver ses publications</li>
-                <li>Retrouver ses jeux de données</li>
+                <li>
+                  Interval de publication des productions.
+                </li>
+                <li>
+                  Les années choisies sont incluses.
+                </li>
+                <li>
+                  Année minimale 2010, année maximale 2024.
+                </li>
+                <li>
+                  Par défaut, l'année sélectionnée est 2023 dans les 2 cas.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h3>Fonctionnalités - Recherche</h3>
+            <h4>Filtrage par type de production</h4>
+            <div>
+              <img alt="affiliations search years" src="images/works_magnet_search_datasets.png" />
+              <ul>
+                <li>
+                  Possibilité de rechercher des jeux de données seulement.
+                </li>
+                <li>
+                  Par défaut, la recherche est effectuée sur les publications et les jeux de données.
+                </li>
               </ul>
             </div>
           </section>
         </section>
 
+        <section>
+          <section>
+            <h3>Fonctionnalités - Action</h3>
+            <div>
+              <ul>
+                <li>Améliorez la correspondance RoR dans OpenAlex</li>
+                <li>📑 Retrouvez les publications affiliées à votre établissement</li>
+                <li>🗃 Retrouvez les jeux de données affiliés à votre établissement</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h3>Fonctionnalités - Action</h3>
+            <div>
+              <ul>
+                <li>On sait qu'<a href="https://ror.org/blog/2023-09-13-openalex-case-study/" target="_blank">
+                  OpenAlex n'est pas exempt d'erreurs</a></li>
+                <li>Proposition d'une solution technique pour centraliser les demandes de correction</li>
+                <li></li>
+              </ul>
+            </div>
+          </section>
+        </section>
       </div>
     </div>
 
