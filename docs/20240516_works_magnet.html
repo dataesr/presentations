@@ -69,7 +69,7 @@
               Eric Jeangirard, Anne L'Hôte
             </p>
             <p style="font-style: italic; margin-top: 0;">
-              DISD / SIES / MESR
+              Dpt. Ingénierie et Sciences des Données / SIES / MESR
             </p>
           </div>
           <div>
@@ -81,8 +81,8 @@
 
         <section>
           <section>
-            <h3 style="font-size: 1.2em;">Context</h3>
-            <div style="font-size: 0.85em;">
+            <h3 style="font-size: 1em;">Le Baromètre de la Science Ouverte, un outil évolutif</h3>
+            <div style="font-size: 0.75em;">
               <div>
                 Depuis 2018, le baromètre de la science ouverte s'enrichit de nouveaux objets d'étude:
               </div>
@@ -90,7 +90,7 @@
                 <ul style="font-size: 0.75em; line-height: 170%;" class="no-style">
                   <br>
                   <li>
-                    📜 2018 : <b>Publications</b>
+                    📄 2018 : <b>Publications</b>
                   </li>
                   <br>
                   <li>
@@ -111,45 +111,54 @@
               </div>
             </div>
           </section>
-
-          <section>
-            <h3 style="font-size: 1.2em;">Context</h3>
-            <div>
-              Au niveau national, notre <a href="https://barometredelascienceouverte.esr.gouv.fr/a-propos/methodologie" target="_blank">
-              méthodologie</a> d'analyse des données de la recherche est basée sur les publications françaises :
+          
+	  <section>
+            <h3 style="font-size: 1em;">La définition du corpus de publications est automatique au niveau national, mais pas local</h3>
+            <div style="font-size: 0.5em; text-align:left;">
+              Au niveau national, le corpus est déterminé automatiquement à partir des affiliations brutes moissonnées / scrapées
+	    </div>
+            <div style="margin: auto; width: 40%;">
+              <img alt="BSO matcher" src="images/works_magnet_bso_matcher.png">
             </div>
-            <div style="margin: auto; width: 80%;">
-              <img alt="Open access rate of scientific publications in France" src="images/works_magnet_bso.png">
-            </div>
+            <div style="font-size: 0.5em; text-align:left;">
+		    Mais au niveau institutionnel, le corpus reste à la main de chaque établissement <br/>(plus de 200 déclinaisons locales à ce jour !)
+	    </div>
           </section>
-
-          <section>
-            <h3 style="font-size: 1.2em;">Context</h3>
-            <div style="font-size: 0.85em;">
+          
+	  <section>
+            <h3 style="font-size: 1em;">Un outil non propriétaire pour les données locales ?</h3>
+            <div style="font-size: 0.5em; text-align:left;">
               <div>
                 L'université de Lorraine propose une 
                 <a href="https://gitlab.com/Cthulhus_Queen/barometre_scienceouverte_universitedelorraine/" target="_blank">méthodologie</a> 
                 pour retrouver les publications de son institution / laboratoire
               </div>
-              <div style="margin: auto; width: 80%;">
+              <div style="margin: auto; width: 50%;">
                 <img alt="Open access rate of scientific publications for university of Lorraine" src="images/works_magnet_publications_ul.png" />
               </div>
+	      <div>
+		      <strong>
+			      Un outil ne faisant pas appel aux bases propriétaires est-il envisageable ? OpenAlex peut aider mais les alignements automatiques sur RoR sont largement perfectibles.   
+		      </strong>
+	      </div>
             </div>
           </section>
 
           <section>
-            <h3 style="font-size: 1.2em;">Context</h3>
-            <div>🕵️ Comment retrouver les jeux de données de son institution / laboratoire ?</div>
-          </section>
-
-          <section>
-            <h3 style="font-size: 1.2em;">Context</h3>
-            <div>
-              🚩 Dans les entrepôts des jeux de données, les affiliations sont en général peu ou pas renseignées
+            <h3 style="font-size: 1.2em;">Au-delà des publications, les jeux de données</h3>
+            <div style="font-size: 0.5em; text-align:left;">
+              🚩 Dans les entrepôts des jeux de données, les métadonnées en général (les affiliations en particulier !) sont peu ou pas renseignées
+	    </div> <br/>
+            <div style="font-size: 0.5em; text-align:left;">
+              Pour les jeux de données, le Baromètre fournit aujourd'hui des indicateurs basés sur les publications, mais des indicateurs "entrepôts-centriques" sont aussi nécessaires pour le pilotage
             </div>
-            <br>
-            <div>
-              🏫 Tout particulièrement les affiliations
+            <div style="margin: auto; width: 60%;">
+              <img alt="Open access rate of scientific publications in France" src="images/works_magnet_bso.png">
+            </div>
+            <div style="font-size: 0.5em; text-align:left;">
+		      <strong>
+		      Comment aider les établissements à retrouver "leurs" jeux de données déposés dans des entrepôts ? 
+		      </strong>
             </div>
           </section>
         </section>
@@ -160,7 +169,22 @@
 
         <section>
           <section>
-            <h3>Sources</h3>
+            <h3 style="font-size: 1.2em;">Trois cas d'usages</h3>
+            <div style="font-size: 0.75em; text-align:left;">
+		    <span>
+			    A partir d'une recherche sur les affiliations (RoR ou dans le texte des signatures), les différentes signatures d'affiliations utilisées sont proposées à l'utilisateur, qui peut ensuite les valider ou les exclure. A partir de là, trois cas d'usages principaux sont proposés :</br>
+		    </span>
+		    <ul>
+			    <li> Corriger les RoR dans OpenAlex </li>
+			    <li> Etablir un corpus de publications </li>
+			    <li> Etablir un corpus de jeux de données </li>
+		    </ul>
+            </div>
+          </section>
+          
+
+	  <section>
+            <h3>Sources mobilisées</h3>
             <div style="font-size: 0.7em; font-style: italic; text-align: left;">
               On capitalise ici sur le travail précédemment réalisé dans le cadre du baromètre de la science ouverte
             </div>
@@ -168,13 +192,14 @@
               <li>OpenAlex</li>
               <li>Baromètre de la science ouverte</li>
               <ul>
-                <li>CrossRef</li>
+                <li>Métadonnées scrapées à partir du web</li>
+                <li>Crossref</li>
                 <li>HAL</li>
                 <li>Datacite</li>
               </ul>
             </ul>
             <div style="font-size: 0.7em; font-style: italic; text-align: left;">
-              On récolte ici, <b>distinctement</b>, publications et jeux de données
+              Des traitements spécifiques aux jeux de données sont réalisés : prise en compte du DOI "principal" uniquement (et pas les DOI de chaque fichier du jeux de données), lien avec le DOI de publication, heuristique basées sur les ORCID croisés avec OpenAlex ...
             </div>
           </section>
 
@@ -272,27 +297,9 @@
 
         <section>
           <section>
-            <h3>Fonctionnalités - Action</h3>
-            <div>
-              <ul>
-                <li>Améliorez la correspondance RoR dans OpenAlex</li>
-                <li>📑 Retrouvez les publications affiliées à votre établissement</li>
-                <li>🗃 Retrouvez les jeux de données affiliés à votre établissement</li>
-              </ul>
-            </div>
+            <h3>Temps d'échange</h3>
           </section>
 
-          <section>
-            <h3>Fonctionnalités - Action</h3>
-            <div>
-              <ul>
-                <li>On sait qu'<a href="https://ror.org/blog/2023-09-13-openalex-case-study/" target="_blank">
-                  OpenAlex n'est pas exempt d'erreurs</a></li>
-                <li>Proposition d'une solution technique pour centraliser les demandes de correction</li>
-                <li></li>
-              </ul>
-            </div>
-          </section>
         </section>
       </div>
     </div>
