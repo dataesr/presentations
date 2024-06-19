@@ -1,0 +1,948 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Brevets publics</title>
+    <meta name="description" content="Brevets où au moins un déposant relève du secetur public">
+    <meta name="author" content="Julia GRANDHAY">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    <style>
+        .reveal .slide-number {
+            background-color: rgba(0, 0, 145, 0.75);
+        }
+
+        :root {
+            --r-link-color: rgba(0, 0, 145, 0.75);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: var(--gridGap);
+            justify-items: center;
+            width: calc((2 * var(--imageWidth)) + (2 * var(--gridGap)));
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+<div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+        <section>
+            <div style="float:left;">
+                <img src="images/mesr.svg" alt="mesr logo"
+                     style="height:180px; margin:0 auto 0rem 1em; background:transparent;" class="mesr-logo">
+            </div>
+            <div style="float: left; display:block; margin:auto">
+                <div style="font-size:1em; margin: 15px 0;font-weight:900;">Les brevets déposés par des personnes
+                    publiques, notamment des institutions relevant de l'enseigement supérieur et de la recherche
+                </div>
+            </div>
+            <div style="float: left; font-size: 0.4em; margin-top: 2rem; text-align: left;">
+                <p style="margin: 0;">
+                    17 juin 2024
+                </p>
+            </div>
+            <div style="float: right; font-size: 0.4em; margin-top: 2rem; text-align: right;">
+                <p style="margin:0;">
+                    Julia GRANDHAY <br/>
+                    Département Ingénierie et science des
+                    données <br/>
+                    SIES - MESR</p>
+                </pre>
+            </div>
+        </section>
+        <section>
+            <section>
+                <h1 style="font-size: 1em;">Plan</h1>
+                <div style="font-size: 0.85em;">
+                    <div style="float: left; width: 100%;">
+                        <ol style="font-size: 0.75em; line-height: 170%;">
+                            <li>
+                                Problématique
+                            </li>
+                            <li>
+                                Définitions
+                            </li>
+                            <li>
+                                Méthodologie
+                            </li>
+                            <li>
+                                Les brevets identifiés dans la base PATSTAT
+                            </li>
+                            <li>
+                                Nombre de demandes par office
+                            </li>
+                            <li>
+                                Stabilité des demandes entre 2010 et 2021
+                            </li>
+                            <li>
+                                Les thématiques des brevets publiés
+                            </li>
+                            <li>
+                                Les déposants des brevets
+                            </li>
+                            <li>
+                                Les collaborations entre déposants
+                            </li>
+                            <li>
+                                Les collaborations entre personnes publiques
+                            </li>
+                            <li>
+                                Les collaborations entre personnes publiques et privées
+                            </li>
+                            <li>
+                                Les éléments clefs à retenir
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1 style="font-size: 1em;">Problématique</h1>
+                <div style="font-size: 0.85em;">
+                    <div style="float: left; width: 100%;">
+                        <ul style="font-size: 0.75em; line-height: 170%;">
+                            <li>
+                                Où sont déposés les brevets des déposants publics et para-publics ?
+                            </li>
+                            <li>
+                                Quels sont les domaines couverts par ces brevets ?
+                            </li>
+                            <li>
+                                Qui sont les déposants publics et para-publics de ces brevets ?
+                            </li>
+                            <li>
+                                Collaborent-ils avec d'autres déposants ?
+                            </li>
+                            <li>
+                                Ces collaborations impliquent-elles des personnes privées ?
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1 style="font-size: 1em;">Définitions</h1>
+                <div style="font-size: 0.85em;">
+                    <div style="float: left; width: 100%;">
+                        <ul style="font-size: 0.7em; line-height: 170%;">
+                            <li>Brevet : Le brevet est un titre de propriété industrielle.</li>
+                            <li>
+                                Famille de brevets : Une famille de brevets simple est une collection de documents de
+                                brevets considérés comme couvrant une seule invention. Le contenu technique couvert par
+                                les demandes est réputé identique.
+                                <a href="https://www.epo.org/fr/searching-for-patents/helpful-resources/first-time-here/patent-families/docdb">Source
+                                    Office européen des brevets</a>
+                            </li>
+                            <li>
+                                Brevet publié : La demande de brevet est rendue publique, 18 mois après le premier dépôt
+                                de celle-ci.
+                                En France, cette publication s’effectue dans le Bulletin officiel de la propriété
+                                industrielle (BOPI) et simultanément sur le registre des brevets, de l’INPI.
+                                <a href="https://www.inpi.fr/proteger-vos-creations/proteger-votre-creation-technique/les-etapes-cles-du-depot-de-brevet#:~:text=Votre%20demande%20de%20brevet%20est,aupr%C3%A8s%20d%27un%20office%20%C3%A9tranger.">Source
+                                    INPI</a>
+                            </li>
+                            <li>
+                                Brevet délivré : En France, un brevet délivré voit la mention de la délivrance indiquée
+                                au Bulletin officiel de la propriété industrielle (BOPI). Il est valable pendant 20 ans
+                                à partir de la date de dépôt, sous réserve que le demandeur paie les annuités.
+                                <a href="https://www.inpi.fr/proteger-vos-creations/proteger-votre-creation-technique/les-etapes-cles-du-depot-de-brevet#:~:text=Votre%20demande%20de%20brevet%20est,aupr%C3%A8s%20d%27un%20office%20%C3%A9tranger.">Source
+                                    INPI</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1 style="font-size: 1em;">Méthodologie</h1>
+                <div style="font-size: 0.85em;">
+                    <div style="float: left; width: 100%;">
+                        <ul style="font-size: 0.75em; line-height: 170%;">
+                            <li>
+                                Analyse des données issues du traitement de la base PATSTAT de l'Office européen des
+                                brevets (OEB)
+                            </li>
+                            <li>
+                                Brevets déposés depuis 2010 dont au moins une des parties est localisée en France
+                            </li>
+                        </ul>
+                    </div>
+                    <img src="images/flux_patstat_dataesr.jpg">
+                </div>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1 style="font-size: 1em;">Les brevets publics identifiés dans la base PATSTAT</h1>
+                <div style="font-size: 0.6em;">
+                    <div style="float: left; width: 100%;">
+                        <ul style="font-size: 0.75em; line-height: 170%;">
+                            <li>
+                                Il y a 214 095 familles de brevets, recouvrant 735 062 brevets français, disponibles
+                                dans la base PATSTAT
+                            </li>
+                            <li>
+                                Au total, pour les brevets où au moins une personne publique est déposante :
+                                <ul>
+                                    <li>
+                                        <b>24 506</b> familles de brevets
+                                    </li>
+                                    <li>
+                                        <b>93 925 brevets</b>, dont <b>44 336</b> ont été délivrés
+                                    </li>
+                                    <li>
+                                        Les brevets ont été déposés auprès de <b>67</b> offices différents
+                                    </li>
+                                    <li>
+                                        Les 10 offices avec le plus de demandes sont :
+                                        <ol>
+                                            <li>
+                                                <b>l'INPI</b> (18 174 demandes)
+                                            </li>
+                                            <li>
+                                                <b>l'OEB</b> (17 335 demandes)
+                                            </li>
+                                            <li>
+                                                <b>l'Organisation mondiale de la propriété intellectuelle</b> (16 651
+                                                demandes)
+                                            </li>
+                                            <li>
+                                                l'office des États-Unis (14 615 demandes)
+                                            </li>
+                                            <li>
+                                                l'office japonais (5 526 demandes)
+                                            </li>
+                                            <li>
+                                                l'office chinois (5 098 demandes)
+                                            </li>
+                                            <li>
+                                                l'office canadien (3 185 demandes)
+                                            </li>
+                                            <li>
+                                                l'office coréen (2 242 demandes)
+                                            </li>
+                                            <li>
+                                                l'office espagnol (2 159 demandes)
+                                            </li>
+                                            <li>
+                                                l'office brésilien (1 326 demandes)
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </li>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1 style="font-size: 1em;">Nombre de demandes par office</h1>
+                <div style="font-size: 0.65em;">
+                    <div style="float: left; width: 100%;">
+                        <table style="font-size: 0.3em; line-height: 170%;">
+                            <tr>
+                                <th>Ordre</th>
+                                <th>Office (pays au format ISO 3166)</th>
+                                <th>Nombre de demandes déposées</th>
+                                <th></th>
+                                <th>Ordre</th>
+                                <th>Office (pays au format ISO 3166)</th>
+                                <th>Nombre de demandes déposées</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>FR</td>
+                                <td>18 174</td>
+                                <td></td>
+                                <td>35</td>
+                                <td>NZ</td>
+                                <td>65</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>EP</td>
+                                <td>17 335</td>
+                                <td></td>
+                                <td>36</td>
+                                <td>IN</td>
+                                <td>65</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>WO</td>
+                                <td>16 651</td>
+                                <td></td>
+                                <td>37</td>
+                                <td>TR</td>
+                                <td>55</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>US</td>
+                                <td>14 615</td>
+                                <td></td>
+                                <td>38</td>
+                                <td>UA</td>
+                                <td>54</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>JP</td>
+                                <td>5 526</td>
+                                <td></td>
+                                <td>39</td>
+                                <td>DE</td>
+                                <td>54</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>CN</td>
+                                <td>5 098</td>
+                                <td></td>
+                                <td>40</td>
+                                <td>NO</td>
+                                <td>46</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>CA</td>
+                                <td>3 185</td>
+                                <td></td>
+                                <td>41</td>
+                                <td>CO</td>
+                                <td>43</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>KR</td>
+                                <td>2 242</td>
+                                <td></td>
+                                <td>42</td>
+                                <td>FI</td>
+                                <td>32</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>ES</td>
+                                <td>2 159</td>
+                                <td></td>
+                                <td>43</td>
+                                <td>PH</td>
+                                <td>27</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>BR</td>
+                                <td>1 326</td>
+                                <td></td>
+                                <td>44</td>
+                                <td>CY</td>
+                                <td>26</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>AU</td>
+                                <td>1 223</td>
+                                <td></td>
+                                <td>45</td>
+                                <td>AP</td>
+                                <td>25</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>RU</td>
+                                <td>715</td>
+                                <td></td>
+                                <td>46</td>
+                                <td>IT</td>
+                                <td>24</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>DK</td>
+                                <td>711</td>
+                                <td></td>
+                                <td>47</td>
+                                <td>PE</td>
+                                <td>22</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>IL</td>
+                                <td>583</td>
+                                <td></td>
+                                <td>48</td>
+                                <td>BE</td>
+                                <td>17</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>PL</td>
+                                <td>578</td>
+                                <td></td>
+                                <td>49</td>
+                                <td>CU</td>
+                                <td>14</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>PT</td>
+                                <td>389</td>
+                                <td></td>
+                                <td>50</td>
+                                <td>UY</td>
+                                <td>11</td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td>TW</td>
+                                <td>388</td>
+                                <td></td>
+                                <td>51</td>
+                                <td>CR</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>MX</td>
+                                <td>344</td>
+                                <td></td>
+                                <td>52</td>
+                                <td>EC</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td>SG</td>
+                                <td>303</td>
+                                <td></td>
+                                <td>53</td>
+                                <td>CH</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>ZA</td>
+                                <td>266</td>
+                                <td></td>
+                                <td>54</td>
+                                <td>SM</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>21</td>
+                                <td>HU</td>
+                                <td>222</td>
+                                <td></td>
+                                <td>55</td>
+                                <td>NL</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>22</td>
+                                <td>MA</td>
+                                <td>143</td>
+                                <td></td>
+                                <td>56</td>
+                                <td>GT</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>23</td>
+                                <td>AR</td>
+                                <td>138</td>
+                                <td></td>
+                                <td>57</td>
+                                <td>GE</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>24</td>
+                                <td>HR</td>
+                                <td>130</td>
+                                <td></td>
+                                <td>58</td>
+                                <td>DO</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>25</td>
+                                <td>HK</td>
+                                <td>119</td>
+                                <td></td>
+                                <td>59</td>
+                                <td>MD</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>EA</td>
+                                <td>92</td>
+                                <td></td>
+                                <td>60</td>
+                                <td>AT</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>27</td>
+                                <td>SI</td>
+                                <td>89</td>
+                                <td></td>
+                                <td>61</td>
+                                <td>JO</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>28</td>
+                                <td>MY</td>
+                                <td>88</td>
+                                <td></td>
+                                <td>62</td>
+                                <td>ME</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>29</td>
+                                <td>CL</td>
+                                <td>84</td>
+                                <td></td>
+                                <td>63</td>
+                                <td>LU</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>LT</td>
+                                <td>81</td>
+                                <td></td>
+                                <td>64</td>
+                                <td>SE</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>31</td>
+                                <td>SA</td>
+                                <td>76</td>
+                                <td></td>
+                                <td>65</td>
+                                <td>NI</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>32</td>
+                                <td>RS</td>
+                                <td>70</td>
+                                <td></td>
+                                <td>66</td>
+                                <td>EG</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>33</td>
+                                <td>TN</td>
+                                <td>68</td>
+                                <td></td>
+                                <td>67</td>
+                                <td>RO</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>34</td>
+                                <td>GB</td>
+                                <td>66</td>
+                                <td></td>
+
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1 style="font-size: 1em;">Stabilité des demandes entre 2010 et 2021</h1>
+                <div style="font-size: 0.65em;">
+                    <div style="float: left; width: 100%;">
+                        <img width="540" src="images/demandes_brevets_esri.jpg">
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1 style="font-size: 1em;">Les thématiques des brevets publiés</h1>
+                <div style="font-size: 0.85em;">
+                    <div style="float: left; width: 100%;">
+                        <ul style="font-size: 0.4em; line-height: 170%;">
+                            <li>
+                                Domaines les plus couverts : H. Électricité, C.
+                                Chimie; métallurgie et G. Physique
+                            </li>
+                            <li>
+                                Quelques exemples de titres :
+                                <ul>
+                                    <li>
+                                        PROCEDE D'ORIENTATION AUTOMATIQUE D'UN DISPOSITIF DE PANNEAU SOLAIRE ET
+                                        DISPOSITIF FONCTIONNANT SELON CE PROCEDE
+                                    </li>
+                                    <li>
+                                        CAPTEUR POUR LA MESURE DES BESOINS D'INSULINE D'UN PATIENT ET PROCEDE DE
+                                        FABRICATION DE CELUI-CI
+                                    </li>
+                                    <li>
+                                        PROCEDE DE DETECTION D'UN ANALYTE DANS UN FLUIDE CORPOREL
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <img src="images/techno_fam_pub.png">
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1 style="font-size: 1em;">Les déposants des brevets (1/3)</h1>
+                <div style="font-size: 0.85em;">
+                    <div style="float: left; width: 100%;">
+                        <ul style="font-size: 0.7em; line-height: 170%;">
+                            <li>
+                                En plus des personnes physiques et morales, 32 catégories de personnes publiques ont été
+                                identifiées (catégories issues de Paysage).
+                            </li>
+                            <li>Les 10 plus actives :</li>
+                            <ol>
+                                <li>
+                                    Organisme de recherche
+                                </li>
+                                <li>
+                                    Université
+                                </li>
+                                <li>
+                                    Centre hospitalier
+                                </li>
+                                <li>
+                                    École d'ingénieurs
+                                </li>
+                                <li>
+                                    Grand établissement
+                                </li>
+                                <li>
+                                    Établissement public expérimental
+                                </li>
+                                <li>
+                                    Grand établissement relevant d'un autre département ministériel
+                                </li>
+                                <li>
+                                    École normale supérieure
+                                </li>
+                                <li>
+                                    Centre de lutte contre le cancer
+                                </li>
+                                <li>
+                                    Structure de recherche
+                                </li>
+                            </ol>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1 style="font-size: 1em;">Les déposants des brevets (2/3)</h1>
+                <div style="font-size: 0.85em;">
+                    <div style="float: left; width: 100%;">
+                        <ul style="font-size: 0.7em; line-height: 170%;">
+                            <li>308 personnes publiques et para-publiques ont été identifiées</li>
+                            <li>
+                                Les 10 personnes publiques qui déposent le plus de brevets sont :
+                            </li>
+                            <ol>
+                                <li>
+                                    Commissariat à l’énergie atomique et aux énergies alternatives
+                                </li>
+                                <li>
+                                    Centre national de la recherche scientifique
+                                </li>
+                                <li>
+                                    Institut national de la santé et de la recherche médicale
+                                </li>
+                                <li>
+                                    IFP Energies nouvelles
+                                </li>
+                                <li>
+                                    Assistance publique - Hôpitaux de Paris
+                                </li>
+                                <li>
+                                    Université Claude Bernard - Lyon 1
+                                </li>
+                                <li>
+                                    Sorbonne Université
+                                </li>
+                                <li>
+                                    Institut national de recherche pour l'agriculture, l'alimentation et l'environnement
+                                </li>
+                                <li>
+                                    Aix-Marseille Université
+                                </li>
+                                <li>
+                                    Université de Bordeaux
+                                </li>
+                            </ol>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1 style="font-size: 1em;">Les déposants des brevets (3/3)</h1>
+                <div style="font-size: 0.85em;">
+                    <div style="float: left; width: 100%;">
+                        <ul style="font-size: 0.7em; line-height: 170%;">
+                            <li>
+                                Pour les 10 premières catégories, les plus gros déposants représentent généralement une
+                                part importante des brevets déposés dans leur catégorie.
+                            </li>
+                        </ul>
+                        <table border="1" style="border-collapse:collapse; font-size: 0.4em; line-height: 170%;">
+                            <tr>
+                                <th>Catégorie</th>
+                                <th>Organisme</th>
+                                <th>Part de l'organisme dans sa catégorie</th>
+                            </tr>
+                            <tr>
+                                <td>Centre de lutte contre le cancer</td>
+                                <td>Centre de lutte contre le cancer Léon-Bérard</td>
+                                <td>40,51 %</td>
+                            </tr>
+                            <tr>
+                                <td>Centre hospitalier</td>
+                                <td>Assistance publique - Hôpitaux de Paris</td>
+                                <td>36,89 %</td>
+                            </tr>
+                            <tr>
+                                <td>Grand établissement</td>
+                                <td>Bordeaux INP</td>
+                                <td>26,98 %</td>
+                            </tr>
+                            <tr>
+                                <td>Grand établissement relevant d'un autre département ministériel</td>
+                                <td>Institut Mines-Télécom</td>
+                                <td>40,85 %</td>
+                            </tr>
+                            <tr>
+                                <td>École normale supérieure</td>
+                                <td>École normale supérieure de Lyon</td>
+                                <td>44,72 %</td>
+                            </tr>
+                            <tr>
+                                <td>Établissement public expérimental</td>
+                                <td>Université Grenoble Alpes</td>
+                                <td>35,65 %</td>
+                            </tr>
+                            <tr>
+                                <td>Organisme de recherche</td>
+                                <td>Commissariat à l’énergie atomique et aux énergies alternatives</td>
+                                <td>33,58 %</td>
+                            </tr>
+                            <tr>
+                                <td>Structure de recherche</td>
+                                <td>Généthon</td>
+                                <td>63,60 %</td>
+                            </tr>
+                            <tr>
+                                <td>Université</td>
+                                <td>Université Claude Bernard - Lyon 1</td>
+                                <td>8,11 %</td>
+                            </tr>
+                            <tr>
+                                <td>École d'ingénieurs</td>
+                                <td>École supérieure de physique et de chimie industrielles de la ville de Paris</td>
+                                <td>16,04 %</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1 style="font-size: 1em;">Les collaborations entre déposants</h1>
+                <div style="font-size: 0.85em;">
+                    <div style="float: left; width: 100%;">
+                        <ul style="font-size: 0.7em; line-height: 170%;">
+                            <li>
+                                L'immense majorité des familles de brevets sont déposées par des personnes privées.
+                            </li>
+                            <li>Toutefois, certaines sont déposées uniquement par des personnes publiques ou par un
+                                ensemble de personnes publiques et privées
+                            </li>
+                            <li>
+                                Dans ce dernier cas, beaucoup de ces personnes privées sont des personnes physiques
+                            </li>
+                        </ul>
+                        <br>
+                        <br>
+                        <table border="1" style="border-collapse:collapse; font-size: 0.5em; line-height: 170%;">
+                            <tr>
+                                <th>Type de coopération</th>
+                                <th>Part des familles de brevets</th>
+                            </tr>
+                            <tr>
+                                <td>Participants uniquement privés</td>
+                                <td>88,55 %</td>
+                            </tr>
+                            <tr>
+                                <td>Participants uniquement publics ou para-publics</td>
+                                <td>7,02 %</td>
+                            </tr>
+                            <tr>
+                                <td>Coopération entre personnes privees et publiques</td>
+                                <td>4,43 %</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1 style="font-size: 1em;">Les collaborations entre personnes publiques</h1>
+                <div style="font-size: 0.85em;">
+                    <div style="float: left; width: 100%;">
+                        <ul style="font-size: 0.7em; line-height: 170%;">
+                            <li>
+                                Le réseau des collaborations s'organise de manière très dense autour du CNRS
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <img width="800" style="margin:0 auto 0rem 1em;" src="images/graph_dep_pub.svg">
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1 style="font-size: 1em;">Les collaborations entre personnes publiques et privées</h1>
+                <div style="font-size: 0.85em;">
+                    <div style="float: left; width: 100%;">
+                        <ul style="font-size: 0.5em; line-height: 170%;">
+                            <li>
+                                Le réseau des collaborations s'organise également autour du CNRS
+                            </li>
+                            <li>
+                                Il y a très peu d'entreprises privées ; les co-déposants privés sont le plus souvent des
+                                personnes physiques, dont des chercheurs
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <img width="750" style="margin:0 auto 0rem 1em;" src="images/graph_dep_collab.svg">
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1 style="font-size: 1em;">Les éléments clefs à retenir</h1>
+                <div style="font-size: 0.85em;">
+                    <div style="float: left; width: 100%;">
+                        <ul style="font-size: 0.5em; line-height: 170%;">
+                            <li>
+                                Au total, pour les brevets où au moins une personne publique est déposante :
+                                <ul>
+                                    <li>
+                                        <b>24 506</b> familles de brevets
+                                    </li>
+                                    <li>
+                                        <b>93 925 brevets</b>, dont <b>44 336</b> ont été délivrés
+                                    </li>
+                                    <li>
+                                        Les brevets ont été déposés auprès de <b>67</b> offices différents
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Les brevets sont massivement déposés auprès de l'INPI, de l'OEB, de l'Organisation
+                                mondiale de la protection intellectuelle et de l'office des États-Unis
+                            </li>
+                            <li>
+                                Le nombre de demandes, par famille de brevets, est stable entre 2010 et 2021
+                            </li>
+                            <li>
+                                Domaines les plus couverts par les brevets : H. Électricité, C. Chimie; métallurgie et
+                                G. Physique
+                            </li>
+                            <li>
+                                Les organismes de recherche sont les principaux déposants publics de brevets, avec le
+                                Commissariat à l’énergie atomique et aux énergies alternatives, le Centre national de la
+                                recherche scientifique et l'Institut national de la santé et de la recherche médicale
+                                comme principaux acteurs
+                            </li>
+                            <li>
+                                L'immense majorité des familles de brevets sont déposées par des personnes privées.
+                            </li>
+                            <li>
+                                Toutefois, certaines sont déposées uniquement par des personnes publiques ou par un
+                                ensemble de personnes publiques et privées
+                            </li>
+                            <li>
+                                Dans ce dernier cas, beaucoup de ces personnes privées sont des personnes physiques
+                            </li>
+                            <li>
+                                Les réseaux des collaborations s'organisent de manière très dense autour du CNRS
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+    </div>
+
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/zoom/zoom.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/search/search.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+
+    // Also available as an ES module, see:
+    // https://revealjs.com/initialization/
+    Reveal.initialize({
+        center: true,
+        controls: true,
+        hash: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight],
+        progress: true,
+        slideNumber: 'c/t',
+    });
+
+</script>
+
+</body>
+</html>
