@@ -130,12 +130,12 @@
                     <br />
                   </li>
                   <li>
-                    si elle est "verte" ? Mais qu'est qu'une publication "verte" ?
+                    si elle est "verte" ?  (définition d'une publication "verte" ?)
                     <br />
                     <br />
                   </li>
                   <li>
-                    si elle appartient au domaine de "l'écologie et du developpement soutenable" ?
+                    si elle appartient au domaine de "l'écologie et du développement soutenable" ?
                   </li>
                 </ul>
               </div>
@@ -152,6 +152,16 @@
                 <ul style="font-size: 0.75em; line-height: 170%;">
                   <br>
                   <li>
+                    le "doi" : c'est l'identifiant unique de la publication
+                    <br />
+                    <br />
+                  </li>
+                  <li>
+                    le "year" : c'est l'année de parution de la publication
+                    <br />
+                    <br />
+                  </li>
+                  <li>
                     le "title" : c'est le titre qui résume le mieux la publication
                     <br />
                     <br />
@@ -165,261 +175,114 @@
                     les "locations" : le nom des journaux dans lesquels la publication a été publié 
                   </li>
                 </ul>
+                <br>
+                <br>
+                ➔ dans OpenAlex il ne reste plus que <b>48 219</b> publications avec ces quatre paramètres non vides sur les 53 258 qui s'y trouvent.
               </div>
             </div>
           </section>
+        </section>
+
+        <section>
           <section>
             <h3 style="font-size: 0.85em;">Créer une base d'apprentissage (2/3)</h3>
             <div style="font-size: 0.80em;">
-              Comment trouver des publications au hasard qui ne sont pas relatif au <b>GIEC</b> ?
+              Comment trouver des publications au hasard qui ne sont pas relatifs au <b>GIEC</b> ?
               <div style="float: left; width: 100%;">
-                <ul style="font-size: 0.75em; line-height: 170%;">
+                <div style="font-size: 0.75em;">
+                  Pour commencer , il vaut mieux comprendre les publications du <b>GIEC</b>, pour ça on peut:
+                </div>
+                <ul style="font-size: 0.70em; line-height: 170%;">
                   <br>
                   <li>
-                    le "title" : c'est le titre qui résume le mieux la publication
+                    regarder les principaux thèmes des publications 
                     <br />
                     <br />
                   </li>
                   <li>
-                    les "topics" : les grands thèmes abordés par la publication
+                    leur distribution temporelle 
                     <br />
                     <br />
-                  </li>
-                  <li>
-                    les "locations" : le nom des journaux dans lesquels la publication a été publié 
                   </li>
                 </ul>
               </div>
             </div>
           </section>
-        </section>
-
-      
-        <section>
           <section>
-            <h3 style="font-size: 0.85em;">Le profil de participation de la France dans les références citées (1/3) </h3>
-            <div style="font-size: 0.80em;">
-              Positionnement relatif de la France par rapport aux autres pays pour les workings groups du <b>GIEC</b> :
-            </div>
-          </section>
-
-          <section>
-            <h3 style="font-size: 0.7em;"> La France est en tête pour les publications qui concernent les sciences physiques mais moins citée pour l'adaptation et l'atténuation </h3>
+            <h3 style="font-size: 0.7em;"> Certains thèmes sont plus fréquents que d'autres...</h3>
             <div style="height: 800px;">
-              <img src="images/teds_ipcc_wg_ens_part.png" />
+             <img style="height: 600px;" src="images/topics_distribution_IPCC_model.png" />
            </div>
           </section>
-
           <section>
-            <h3 style="font-size: 0.7em;"> Annexe - publications citées par pays et par WG (top 20) </h3>
-            <div class="gallery">
-              <img src="images/teds_ipcc_country_wg1_number.png" />
-              <img src="images/teds_ipcc_country_wg2_number.png" />
-              <img src="images/teds_ipcc_country_wg2cross_number.png" />
-              <img src="images/teds_ipcc_country_wg3_number.png" />
+            <h3 style="font-size: 0.7em;"> ... certains journaux ont des thématiques particulières...</h3>
+            <div style="height: 800px;">
+             <img style="height: 600px;" src="images/locations_distribution_IPCC_model.png" />
+           </div>
+          </section>
+          <section>
+            <h3 style="font-size: 0.7em;"> ... et les publications paraîssent relativement récentes </h3>
+            <div style="height: 800px;">
+             <img src="images/time_distribution_IPCC_model.png" />
            </div>
           </section>
         </section>
 
         <section>
           <section>
-            <h3 style="font-size: 0.85em;">Le profil de participation de la France dans les références citées (2/3) </h3>
-            <div style="font-size: 0.80em;">
-              La structure de la contribution française se distingue-t-elle de celle des autres pays pour les workings groups du <b>GIEC</b> ?
-            </div>
-          </section>
-
-          <section>
-            <h3 style="font-size: 0.45em;"> Les publications françaises sont sensiblement plus concentrées que celles des autres pays sur les sciences théoriques et le constat des impacts et risques sur les coraux, forêts, déserts...</h3>
-            <div style="height: 620px;">
-              <img src="images/teds_ipcc_5countries.png" />
-            </div>
-          </section>
-
-          <section>
-            <h3 style="font-size: 0.5em;"> ... ON CONSTATE QUE, POUR LA FRANCE, LE ROYAUME-UNI ET L'ALLEMAGNE, LA PART DES PUBLICATIONS AUX INTERFACES  EST SUPéRIEUR à CELLE DE LA CHINE ET DES éTATS-UNIS </h3>
-            <div style="height: 650px;">
-              <img src="images/teds_ipcc_5countries_interfaces.png" />
-            </div>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h3 style="font-size: 0.85em;">Le profil de participation de la France dans les références citées (3/3) </h3>
-            <div style="font-size: 0.80em;">
-              Quelle est la répartition temporelle des publications françaises ?
-            </div>
-          </section>
-
-          <section>
-            <h3 style="font-size: 0.7em;"> La recherche des années précedant la publication du rapport prédomine (sortie en 2021 pour le groupe science physique et 2022 pour le reste)</h3>
-            <div style="height: 650px;">
-              <img src="images/teds_ipcc_time_distrib_fr.png" />
-            </div>
-          </section>
-
-          <section>
-            <h3 style="font-size: 0.7em;"> Une recherche un peu plus ancienne pour l'IPBES (par rapport à sa date de sortie - 2019) </h3>
-            <div style="height: 650px;">
-              <img src="images/teds_ipbes_time_distrib_fr.png" />
-            </div>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h3 style="font-size: 0.85em;">En France, qui contribue au sujet ? (1/4) </h3>
-            <div style="font-size: 0.80em;">
-              Quelles sont les institutions françaises les plus cités ?
-            </div>
-          </section>
-
-          <section>
-            <h3 style="font-size: 0.5em;"> Spécificité des orientations de recherche, mixité des unités et taille : Le CNRS très largement en tête dans les publications du GIEC et suivi par l'IRD...</h3>
-            <div style="height: 650px;">
-              <img src="images/teds_ipcc_institutions.png" />
-            </div>
-          </section>
-
-          <section>
-            <h3 style="font-size: 0.5em;"> ... le CNRS largement en tête dans les publications de l'IPBES aussi et toujours suivi par l'IRD</h3>
-            <div style="height: 650px;">
-              <img src="images/teds_ipbes_institutions.png" />
-            </div>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h3 style="font-size: 0.85em;">En France, qui contribue au sujet ? (2/4) </h3>
-            <div style="font-size: 0.80em;">
-              Quels sont les laboratoires français les plus cités ?
-            </div>
-          </section>
-
-          <section>
-            <h3 style="font-size: 0.5em;"> Le laboratoire des sciences du climat largement en tête dans les publications du GIEC </h3>
-            <div style="height: 650px;">
-              <img src="images/teds_ipcc_lab.png" />
-            </div>
-          </section>
-
-          <section>
-            <h3 style="font-size: 0.5em;"> Le laboratoire des sciences du climat toujours en tête dans les publications de l'IPBES</h3>
-            <div style="height: 650px;">
-              <img src="images/teds_ipbes_labs.png" />
-            </div>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h3 style="font-size: 0.85em;">En France, qui contribue au sujet ? (3/4) </h3>
-            <div style="font-size: 0.80em;">
-              Quels sont les auteurs français les plus cités ? 
-            </div>
-          </section>
-
-          <section>
-            <h3 style="font-size: 0.7em;"> Philippe Ciais très largement cité dans les publications du GIEC, Laurent bopp et Robert Vautard sont cités de manière équivalente par la suite</h3>
-            <div style="height: 650px;">
-              <img src="images/teds_ipcc_authors.png" />
-            </div>
-          </section>
-
-          <section>
-            <h3 style="font-size: 0.7em;"> Philippe Ciais en tête dans les publications de l'IPBES mais suivi de près par Laurent Bopp</h3>
-            <div style="height: 650px;">
-              <img src="images/teds_ipbes_authors.png" />
-            </div>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h3 style="font-size: 0.85em;">En France, qui contribue au sujet ? (4/4) </h3>
-            <div style="font-size: 0.80em;">
-              Qui sont ces auteurs et quel moyen pour en apprendre rapidement plus sur eux ? 
-            </div>
-            <div style="font-size: 0.60em;">
-              Par exemple, recherche de Philippe Ciais sur scanR :  
-              <a href="https://scanr.staging.dataesr.ovh/">https://scanr.staging.dataesr.ovh/</a>
-            </div>
-          </section>
-
-          <section>
-            <h3 style="font-size: 0.7em;"> les concepts wikipédia et nombre de publications par année...</h3>
-            <div style="height: 650px;">
-              <img src="images/teds_scanR1.png" />
-            </div>
-          </section>
-
-          <section>
-            <h3 style="font-size: 0.7em;"> ...LES AFFILIATIONS RECENTES ASSOCIéES à PHILIPPE CIAIS DANS SES PUBLICATIONS ET OUVERTURE DE CES PUBLICATIONS... </h3>
-            <div style="height: 650px;">
-              <img src="images/teds_scanR2.png" />
-            </div>
-          </section>
-
-          <section>
-            <h3 style="font-size: 0.7em;"> ...les prix et distinctions de Philippe Ciais... </h3>
-            <div style="height: 650px;">
-              <img src="images/teds_scanR3.png" />
-            </div>
-          </section>
-
-          <section>
-            <h3 style="font-size: 0.7em;"> ...SES PUBLICATIONS (DEPUIS 2013) - UNE POSSIBILITÉ DE VISUALISATION : LE GRAPHE DE SES COLLABORATIONS</h3>
-            <div style="height: 650px;">
-              <img src="images/teds_scanR4_vis.png" />
-            </div>
-          </section>
-
-          <section>
-            <h3 style="font-size: 0.7em;"> l' Ecosystème de Philippe Ciais disponible sur ScanR: 1 point correspond à un auteur et un lien correspond à une copublication... </h3>
-            <div style="height: 650px;">
-              <img src="images/teds_graph_tot.png" />
-            </div>
-          </section>
-
-          <section>
-            <h3 style="font-size: 0.7em;"> ...Philippe Ciais et robert vautard ont copublié ensemble </h3>
-            <div style="height: 650px;">
-              <img src="images/teds_graph_pc.png" />
-            </div>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h3 style="font-size: 1.2em;">Les éléments clés à retenir: </h3>
-            <div style="font-size: 0.85em;">
-              <div style="float: left; width: 100%;">
-                <ul style="font-size: 0.6em; line-height: 170%;">
+            <h3 style="font-size: 0.85em;">Créer une base d'apprentissage (3/3)</h3>
+              <div style="font-size: 0.80em;">
+                ➔ Avec l'API OpenAlex, on peut récupérer des publications :
+                <ul style="font-size: 0.70em; line-height: 170%;">
                   <br>
                   <li>
-                    🧘  La France occupe la septième place dans les classements généraux par pays du <b>GIEC</b> et l'<b>IPBES</b>, cela représente respectivement pour le GIEC et l'IPBES, 3925 publications sur 53258 et 458 sur 6106
-                    <br />
-                    <br />
+                    qui ne sont pas citées par le <b>GIEC</b> grâce aux doi
+                    <br>
+                    <br>
                   </li>
                   <li>
-                    ✨ La France brille dans les sciences physiques, les publications françaises sont les 4ème plus utilisées pour le groupe concernant les sciences physiques (WG1) du <b>GIEC</b> : Près de 13% des publications du WG1 ont une contribution française 
-                    <br />
-                    <br />
+                    qui ne comportent pas certains termes 
+                    comme "climate change" ou "environmental impact" dans les thèmes 
+                    pour ne pas biaiser notre modèle.
+                    <br>
+                    <br>
                   </li>
                   <li>
-                    ⏳ Les rapports s'appuient sur des publications récentes par rapport à leur date de parutions: elles dates en majorité des 5 dernières années (60% des publications du GIEC est compris entre 2017 et 2022 et 62% des publications de L'IPBES est compris entre 2014 et 2019)
-                    <br />
-                    <br />
-                  </li>
-                  <li>
-                    👩‍🔬 En France, les laboratoires travaillant sur les rapports sont globalement localisés en île-de-France et en Occitanie
-                    <br />
+                    qui ont une distribution temporelle globale équivalente 
+                    <br>
+                    (ex: pour l'année 2018 il y a 6755 publications citées par le GIEC, 
+                    alors on récupère 6755 publications sur OpenAlex qui ne comporte pas certains thèmes et on reproduit cette opération 
+                    pour chaque année présente dans la distribution temporelle des publications du GIEC)
                     <br />
                   </li>
                 </ul>
               </div>
+            </h3>
+          </section>
+        </section>
+      
+        
+        <section>
+          <section>
+            <h3 style="font-size: 0.85em;"> Faire le modèle (1/3)</h3>
+            <div style="font-size: 0.80em;">
+              Comment faire apprendre à une machine des données textuelles ?
+              <div style="float: left; width: 100%;">
+                <div style="font-size: 0.75em;">
+                  Pour commencer , il vaut mieux comprendre la vectorisation des mots,
+                  <br>
+                  prenons un exemple :
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <h3 style="font-size: 0.7em;"> C'est une projection de mot ou de phrase sur plusieurs dimensions </h3>
+            <div class="gallery">
+              <img src="images/teds_model_embeddings.png" />
+              <img src="images/teds_model_embeddings2.png" />
+           </div>
+           <div style="font-size: 0.65em;" > ➔ couteau et cuillère paraissent plus proches entre eux que homme et femme</div>
           </section>
         </section>
             
