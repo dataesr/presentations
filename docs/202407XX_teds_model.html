@@ -1,19 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>TEDS</title>
-    <meta name="description" content="TODO_DESCRIPTION">
-    <meta name="abstract" content="TODO_ABSTRATCT">
-    <meta name="author" content="TODO_AUTHOR">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dist/reset.css">
-    <link rel="stylesheet" href="dist/reveal.css">
-    <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+    <meta name="description" content="TODO_DESCRIPTION" />
+    <meta name="abstract" content="TODO_ABSTRATCT" />
+    <meta name="author" content="TODO_AUTHOR" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
     <style>
       .reveal .slide-number {
         background-color: rgba(0, 0, 145, 0.75);
@@ -31,6 +34,11 @@
         width: calc((2 * var(--imageWidth)) + (2 * var(--gridGap)));
         margin: 0 auto;
       }
+      .red {
+        border-style: solid;
+        border-color: red;
+        border-width: 2px;
+      }
     </style>
   </head>
 
@@ -38,21 +46,42 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <div style="float: left;">
-            <img alt="mesr logo" src="images/mesr.svg" style="background: transparent; height: 120px; margin: 0 auto 0 1em;">
+          <div style="float: left">
+            <img
+              alt="mesr logo"
+              src="images/mesr.svg"
+              style="
+                background: transparent;
+                height: 120px;
+                margin: 0 auto 0 1em;
+              "
+            />
           </div>
-          <div style="display: block; float: left; margin: auto;">
-            <div style="font-size: 1em; margin: 15px 0;">
-              🌳 🐦 Transition écologique pour un développement soutenable - Modèle d'apprentissage
+          <div style="display: block; float: left; margin: auto">
+            <div style="font-size: 1em; margin: 15px 0">
+              🌳 🐦 Transition écologique pour un développement soutenable -
+              Modèle d'apprentissage
             </div>
           </div>
-          <div style="float: left; font-size: 0.4em; margin-top: 2rem; text-align: left;">
-            <p style="margin: 0;">
-              XX juillet 2024
-            </p>
+          <div
+            style="
+              float: left;
+              font-size: 0.4em;
+              margin-top: 2rem;
+              text-align: left;
+            "
+          >
+            <p style="margin: 0">XX juillet 2024</p>
           </div>
-          <div style="float: right; font-size: 0.4em; margin-top: 2rem; text-align: right;">
-            <p style="margin: 0;">
+          <div
+            style="
+              float: right;
+              font-size: 0.4em;
+              margin-top: 2rem;
+              text-align: right;
+            "
+          >
+            <p style="margin: 0">
               AALLAT Hafsa <br />
               hafsa.aallat@recherche.gouv.fr <br />
               SIES - DISD
@@ -62,53 +91,22 @@
 
         <section>
           <section>
-            <h3 style="font-size: 1.2em;">Problématiques</h3>
-            <div style="font-size: 0.85em;">
-              <div style="float: left; width: 100%;">
-                <ul style="font-size: 0.75em; line-height: 170%;">
-                  <br>
-                  <li>
+            <h3 style="font-size: 1.2em">Problématiques</h3>
+            <div style="font-size: 0.85em">
+              <div style="float: left; width: 100%">
+                <ul style="font-size: 0.75em; line-height: 170%">
+                  <li style="margin-bottom: 1em">
                     ❓ Quel est le modèle qu'on veut faire ?
-                    <br />
-                    <br />
                   </li>
-                  <li>
-                    📖 Comment créer une base d'apprentissage pour le modèle et comment l'utiliser? 
-                    <br />
-                    <br />
+                  <li style="margin-bottom: 1em">
+                    📖 Comment créer une base d'apprentissage pour le modèle et
+                    comment l'utiliser?
                   </li>
-                  <li>
+                  <li style="margin-bottom: 1em">
                     🤷‍♀️ Que fait ce modèle dans les faits ?
                   </li>
-                </ul>
-              </div>
-          </section>
-        </section>
-
-
-        <section>
-          <section>
-            <h3 style="font-size: 1.2em;">Méthodologie</h3>
-            <div style="font-size: 0.85em;">
-              <div style="float: left; width: 100%;">
-                <ul style="font-size: 0.75em; line-height: 170%;">
-                  <br>
-                  <li>
-                    👁️‍🗨️ Sélectionner des métadonnées pertinantes à partir de la base de données du GIEC nettoyée et enrichie 
-                    avec OpenAlex notamment (53 258 publications)
-                  </li>
-                  <br>
-                  <li>
-                    🕵️ Récupérer des publications sur OpenAlex qui ne sont pas citées ni "citables" par le GIEC apriori et faire un modèle d'apprentissage
-                  </li>
-                  <br>
-                  <li>
-                    👀 Évaluer le modèle 
-                  </li>
-                  <br>
-                  <li>
-                    🔓 L'intégralité du code et les données utilisées sont ouvertes :
-                    <a href="http://github.com/dataesr/teds">http://github.com/dataesr/teds</a>
+                  <li style="margin-bottom: 1em">
+                    📳 Quels sont ses applications possibles ?
                   </li>
                 </ul>
               </div>
@@ -118,24 +116,59 @@
 
         <section>
           <section>
-            <h3 style="font-size: 0.85em;">Un modèle qui prédit quoi ?</h3>
-            <div style="font-size: 0.80em;">
-              pour une nouvelle publication, on va chercher à savoir :
-              <div style="float: left; width: 100%;">
-                <ul style="font-size: 0.75em; line-height: 170%;">
-                  <br>
-                  <li>
+            <h3 style="font-size: 1.2em">Méthodologie</h3>
+            <div style="font-size: 0.85em">
+              <div style="float: left; width: 100%">
+                <ul style="font-size: 0.75em; line-height: 170%">
+                  <li style="margin-bottom: 1em">
+                    👁️‍🗨️ Sélectionner des métadonnées pertinantes à partir de la
+                    base de données du GIEC nettoyée et enrichie avec OpenAlex
+                    notamment (53 258 publications)
+                  </li>
+                  <li style="margin-bottom: 1em">
+                    🎣 Récupérer des publications sur OpenAlex qui ne sont pas
+                    citées ni "citables" par le GIEC a priori
+                  </li>
+                  <li style="margin-bottom: 1em">
+                    🤔 Faire un modèle d'apprentissage
+                  </li>
+                  <li style="margin-bottom: 1em">💹 Évaluer le modèle</li>
+                  <li style="margin-bottom: 1em">
+                    🔓 L'intégralité du code et les données utilisées sont
+                    ouvertes :
+                    <a href="http://github.com/dataesr/teds"
+                      >http://github.com/dataesr/teds</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h3 style="font-size: 0.85em">Un modèle qui prédit quoi ?</h3>
+            <div style="font-size: 0.8em">
+              Admettons qu'on nous présente une nouvelle publication, on va
+              chercher à "prédire" :
+              <div style="float: left; width: 100%">
+                <ul style="font-size: 0.75em; line-height: 170%">
+                  <br />
+                  <li style="margin-bottom: 1em">
                     si elle est citable par le GIEC ?
                     <br />
                     <br />
                   </li>
-                  <li>
-                    si elle est "verte" ?  (définition d'une publication "verte" ?)
+                  <li style="margin-bottom: 1em">
+                    si elle est "verte" ? (définition d'une publication "verte"
+                    ?)
                     <br />
                     <br />
                   </li>
-                  <li>
-                    si elle appartient au domaine de "l'écologie et du développement soutenable" ?
+                  <li style="margin-bottom: 1em" class="red">
+                    si elle appartient au domaine de "l'écologie et du
+                    développement soutenable" ?
                   </li>
                 </ul>
               </div>
@@ -145,148 +178,300 @@
 
         <section>
           <section>
-            <h3 style="font-size: 0.85em;">Créer une base d'apprentissage (1/3)</h3>
-            <div style="font-size: 0.80em;">
-              Dans la base de données enrichie, à chaque publication du <b>GIEC</b> est associée :
-              <div style="float: left; width: 100%;">
-                <ul style="font-size: 0.75em; line-height: 170%;">
-                  <br>
-                  <li>
-                    le "doi" : c'est l'identifiant unique de la publication
-                    <br />
-                    <br />
-                  </li>
-                  <li>
-                    le "year" : c'est l'année de parution de la publication
-                    <br />
-                    <br />
-                  </li>
-                  <li>
-                    le "title" : c'est le titre qui résume le mieux la publication
-                    <br />
-                    <br />
-                  </li>
-                  <li>
-                    les "topics" : les grands thèmes abordés par la publication
-                    <br />
-                    <br />
-                  </li>
-                  <li>
-                    les "locations" : le nom des journaux dans lesquels la publication a été publié 
-                  </li>
-                </ul>
-                <br>
-                <br>
-                ➔ dans OpenAlex il ne reste plus que <b>48 219</b> publications avec ces quatre paramètres non vides sur les 53 258 qui s'y trouvent.
-              </div>
-            </div>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h3 style="font-size: 0.85em;">Créer une base d'apprentissage (2/3)</h3>
-            <div style="font-size: 0.80em;">
-              Comment trouver des publications au hasard qui ne sont pas relatifs au <b>GIEC</b> ?
-              <div style="float: left; width: 100%;">
-                <div style="font-size: 0.75em;">
-                  Pour commencer , il vaut mieux comprendre les publications du <b>GIEC</b>, pour ça on peut:
-                </div>
-                <ul style="font-size: 0.70em; line-height: 170%;">
-                  <br>
-                  <li>
-                    regarder les principaux thèmes des publications 
-                    <br />
-                    <br />
-                  </li>
-                  <li>
-                    leur distribution temporelle 
-                    <br />
-                    <br />
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-          <section>
-            <h3 style="font-size: 0.7em;"> Certains thèmes sont plus fréquents que d'autres...</h3>
-            <div style="height: 800px;">
-             <img style="height: 600px;" src="images/topics_distribution_IPCC_model.png" />
-           </div>
-          </section>
-          <section>
-            <h3 style="font-size: 0.7em;"> ... certains journaux ont des thématiques particulières...</h3>
-            <div style="height: 800px;">
-             <img style="height: 600px;" src="images/locations_distribution_IPCC_model.png" />
-           </div>
-          </section>
-          <section>
-            <h3 style="font-size: 0.7em;"> ... et les publications paraîssent relativement récentes </h3>
-            <div style="height: 800px;">
-             <img src="images/time_distribution_IPCC_model.png" />
-           </div>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h3 style="font-size: 0.85em;">Créer une base d'apprentissage (3/3)</h3>
-              <div style="font-size: 0.80em;">
-                ➔ Avec l'API OpenAlex, on peut récupérer des publications :
-                <ul style="font-size: 0.70em; line-height: 170%;">
-                  <br>
-                  <li>
-                    qui ne sont pas citées par le <b>GIEC</b> grâce aux doi
-                    <br>
-                    <br>
-                  </li>
-                  <li>
-                    qui ne comportent pas certains termes 
-                    comme "climate change" ou "environmental impact" dans les thèmes 
-                    pour ne pas biaiser notre modèle.
-                    <br>
-                    <br>
-                  </li>
-                  <li>
-                    qui ont une distribution temporelle globale équivalente 
-                    <br>
-                    (ex: pour l'année 2018 il y a 6755 publications citées par le GIEC, 
-                    alors on récupère 6755 publications sur OpenAlex qui ne comporte pas certains thèmes et on reproduit cette opération 
-                    pour chaque année présente dans la distribution temporelle des publications du GIEC)
-                    <br />
-                  </li>
-                </ul>
-              </div>
+            <h3 style="font-size: 0.85em">
+              Créer une base d'apprentissage (1/3)
             </h3>
+            <div style="font-size: 0.8em">
+              Dans la base de données enrichie obtenue à partir des publications
+              du
+              <b>GIEC</b>, à chaque publication est associée :
+              <div style="float: left; width: 100%">
+                <ul style="font-size: 0.75em; line-height: 170%">
+                  <br />
+                  <li style="margin-bottom: 1em">
+                    le "doi" : c'est l'identifiant unique de la publication
+                  </li>
+                  <li style="margin-bottom: 1em">
+                    le "year" : c'est l'année de parution de la publication
+                  </li>
+                  <li style="margin-bottom: 1em">
+                    le "title" : c'est le titre qui résume le mieux la
+                    publication
+                  </li>
+                  <li style="margin-bottom: 1em">
+                    les "topics" : les grands thèmes abordés par la publication
+                  </li>
+                  <li style="margin-bottom: 1em">
+                    les "locations" : le nom des journaux dans lesquels la
+                    publication a été publié
+                  </li>
+                </ul>
+                <br />
+                <br />
+                ➔ dans OpenAlex il ne reste plus que <b>48 219</b> publications
+                avec ces quatre paramètres non vides sur les 53 258 qui s'y
+                trouvent.
+              </div>
+            </div>
           </section>
         </section>
-      
-        
+
         <section>
           <section>
-            <h3 style="font-size: 0.85em;"> Faire le modèle (1/3)</h3>
-            <div style="font-size: 0.80em;">
+            <h3 style="font-size: 0.85em">
+              Créer une base d'apprentissage (2/3)
+            </h3>
+            <div style="font-size: 0.8em">
+              Comment trouver des publications au hasard qui ne sont pas
+              relatifs au <b>GIEC</b> ?
+              <div style="float: left; width: 100%">
+                <div style="font-size: 0.75em">
+                  Pour commencer , il vaut mieux comprendre les publications du
+                  <b>GIEC</b>, pour ça on peut regarder:
+                </div>
+                <ul style="font-size: 0.7em; line-height: 170%">
+                  <br />
+                  <li>
+                    Les principaux thèmes des publications
+                    <br />
+                    <br />
+                  </li>
+                  <li>
+                    Les principaux journaux qui les ont publiés
+                    <br />
+                    <br />
+                  </li>
+                  <li>
+                    Leur distribution temporelle
+                    <br />
+                    <br />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section>
+            <h3 style="font-size: 0.7em">
+              Certains thèmes sont plus fréquents que d'autres...
+            </h3>
+            <div style="height: 800px">
+              <img
+                style="height: 600px"
+                src="images/topics_distribution_IPCC_model.png"
+              />
+            </div>
+          </section>
+          <section>
+            <h3 style="font-size: 0.7em">
+              ... certains journaux ont des thématiques particulières...
+            </h3>
+            <div style="height: 800px">
+              <img
+                style="height: 600px"
+                src="images/locations_distribution_IPCC_model.png"
+              />
+            </div>
+          </section>
+          <section>
+            <h3 style="font-size: 0.7em">
+              ... et les publications paraîssent relativement récentes
+            </h3>
+            <div style="height: 800px">
+              <img src="images/time_distribution_IPCC_model.png" />
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h3 style="font-size: 0.85em">
+              Créer une base d'apprentissage (3/3)
+            </h3>
+            <div style="font-size: 0.8em">
+              ➔ Avec l'API OpenAlex, on peut récupérer des publications :
+              <ul style="font-size: 0.7em; line-height: 170%">
+                <br />
+                <li>
+                  qui ne sont pas citées par le <b>GIEC</b> grâce aux doi
+                  <br />
+                  <br />
+                </li>
+                <li>
+                  qui ne comportent pas certains termes comme "climate change"
+                  ou "environmental impact" dans les thèmes pour ne pas biaiser
+                  notre modèle.
+                  <br />
+                  <br />
+                </li>
+                <li>
+                  qui ont une distribution temporelle globale équivalente
+                  <br />
+                  (ex: pour l'année 2018 il y a 6755 publications citées par le
+                  GIEC, alors on récupère 6755 publications sur OpenAlex qui ne
+                  comporte pas certains thèmes et on reproduit cette opération
+                  pour chaque année présente dans la distribution temporelle des
+                  publications du GIEC)
+                  <br />
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <div>
+              On labelise les publications du GIEC "1" et les autres 0 (à
+              reformuler)
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h3 style="font-size: 0.85em">Faire le modèle (1/2)</h3>
+            <div style="font-size: 0.8em">
               Comment faire apprendre à une machine des données textuelles ?
-              <div style="float: left; width: 100%;">
-                <div style="font-size: 0.75em;">
-                  Pour commencer , il vaut mieux comprendre la vectorisation des mots,
-                  <br>
-                  prenons un exemple :
+              <div style="float: left; width: 100%">
+                <div style="font-size: 0.75em">
+                  <ul style="font-size: 0.7em; line-height: 170%">
+                    <br />
+                    <li>
+                      Une machine a besoin de données chiffrées, on a donc
+                      besoin de "transformer" nos données textuelles en chiffre
+                      ou en vecteurs, qui sont dans les faits des chiffres mais
+                      dans plusieurs dimensions
+                      <br />
+                      (un peu comme les couleurs en RGB: une couleur est
+                      "projetée" dans 3 dimensions 'rouge', 'vert' et 'bleu')
+                      <br />
+                      <br />
+                    </li>
+                    <li>
+                      Les données étant assez complexes, on comprend qu'il va
+                      falloir "vectoriser" nos titres, thèmes et noms de
+                      journaux
+                      <br />
+                      <br />
+                    </li>
+                  </ul>
+                  ➔ Qu'est ce qu'une vectorisation ?
                 </div>
               </div>
             </div>
           </section>
           <section>
-            <h3 style="font-size: 0.7em;"> C'est une projection de mot ou de phrase sur plusieurs dimensions </h3>
+            <h3 style="font-size: 0.7em">
+              Comment vectoriser des mots sur plusieurs dimensions ?
+            </h3>
             <div class="gallery">
               <img src="images/teds_model_embeddings.png" />
               <img src="images/teds_model_embeddings2.png" />
-           </div>
-           <div style="font-size: 0.65em;" > ➔ couteau et cuillère paraissent plus proches entre eux que homme et femme</div>
+            </div>
+            <div style="font-size: 0.6em">
+              ➔ couteau et cuillère paraissent plus proches entre eux que homme
+              et femme
+              <br />
+              <br />
+            </div>
+            <div style="font-size: 0.65em">
+              ➔ La vectorisation de ces quatre mots sur trois dimensions est
+              faite de manière un peu arbitraire mais :
+              <b>Quels sont les moyens connus de vectorisations de mots?</b>
+            </div>
+          </section>
+          <section>
+            <h3 style="font-size: 0.7em">
+              Il y a deux grands types de vectorisations :
+            </h3>
+            <ul style="font-size: 0.5em; line-height: 170%">
+              <br />
+              <li>
+                La vectorisation <b>sémantique</b> dîtes statique : qui
+                reconnaît les similarités textuelles (par exemple: chat et
+                chaton auront des vecteurs proches dans l'espace vectoriel)
+                <br />
+                Par contre, deux synonymes auront le même vecteur, peu importe
+                le contexte (par exemple: "le chat dort" et "il y a un message
+                dans le chat", le mot "chat" aura le même vecteur dans les deux
+                phrases)
+                <br />
+                <br />
+              </li>
+              <li class="red">
+                La vectorisation <b>contextuelle</b> : qui prend en entrée un.e
+                texte ou phrase, le subdivise et le projette en vecteurs
+                "sémentiques"
+                <br />
+                Ces vecteurs sont <b>transformés</b> via un réseau de neurones
+                pré-entrainé appelé "transformers", il y a plusieurs modèles de
+                transformers (<b>encoders</b>, decoders ou encore
+                visionTransformers... ). En sortie, ces modèles donnent des
+                vecteurs qui prennent en compte le contexte spécifique de chaque
+                mot. Ainsi le mot "chat" dans "le chat dort" et "il y a un
+                message dans le chat" n'aura pas le même vecteur selon la
+                phrase, parce que le modèle comprend le contexte local
+                <br />
+                <br />
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3 style="font-size: 0.7em">
+              Dans notre cas, on vectorise de manière <b>contextuelle</b> comme
+              vu plus haut, c'est à dire qu'on transforme tous les titres,
+              thèmes et noms de journaux en vecteurs en prenant en compte
+              certaines modalités:
+            </h3>
+            <div style="font-size: 0.65em">
+              <ul style="font-size: 0.6em; line-height: 170%">
+                <br />
+                <li>
+                  Un prétraitement est fait en amont: les mots comme "journal"
+                  ou "letters" sont retirés ainsi que les déterminants et les
+                  conjonctions de coordinations
+                  <br />
+                  <br />
+                </li>
+                <li>
+                  Le modèle de type <b>transformers</b> utilisé est le
+                  <b>gte-large</b>
+                  qui présente une architecture similaire à BERT (un autre
+                  transformeur assez connu, qui s'est pré-entrainé sur tout
+                  wikipédia )
+                  <br />
+                  <br />
+                </li>
+                <li>
+                  Les vecteurs comportent <b>1024 dimensions</b>, c'est à dire
+                  que les phrases sont projetés dans un espace vectoriel à 1024
+                  dimensions et que chaque phrase a son vecteur correspondant.
+                  <br />
+                  <br />
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
-            
 
+        <section>
+          <section>
+            <h3 style="font-size: 0.85em">Faire le modèle (2/2)</h3>
+            <div style="font-size: 0.8em">
+              Quel modèle d'apprentissage ont été utilisé dans notre cas ?
+              <div style="float: left; width: 100%">
+                <div style="font-size: 0.75em">
+                  <ul style="font-size: 0.7em; line-height: 170%">
+                    <br />
+                    <li>
+                      Une fois vectorisé,
+                      <br />
+                      <br />
+                    </li>
+                  </ul>
+                  ➔ Qu'est ce qu'une vectorisation ?
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
       </div>
     </div>
     <script src="dist/reveal.js"></script>
@@ -303,12 +488,18 @@
         progress: true,
         center: true,
         hash: true,
-        slideNumber: 'c/t',
+        slideNumber: "c/t",
 
         // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+        ],
       });
-      Reveal.configure({ pdfMaxPagesPerSlide: 1 })
+      Reveal.configure({ pdfMaxPagesPerSlide: 1 });
       Reveal.configure({ pdfSeparateFragments: false });
     </script>
   </body>
