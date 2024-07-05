@@ -91,19 +91,56 @@
 
         <section>
           <section>
+            <h3 style="font-size: 0.85em">Mise en contexte</h3>
+            <div style="font-size: 0.8em">
+              Lors de la première phase d'analyse, à partir des publications du
+              <b>GIEC</b>, nous avons:
+              <div style="float: left; width: 100%">
+                <ul style="font-size: 0.75em; line-height: 170%">
+                  <li style="margin-block: 1em">
+                    🧹 Collecté et nettoyé les données disponible sur le site du
+                    GIEC
+                  </li>
+                  <li style="margin-block: 1em">
+                    💰 Enrichi ces données notamment grâce à OpenAlex
+                  </li>
+                </ul>
+                <br />
+                ➔ Ces données enrichies nous ont servi de base pour analyser les
+                publications du GIEC, la présentation est disponible
+                <a
+                  href="https://dataesr.github.io/presentations/20240311_teds.html"
+                  >ici</a
+                >
+              </div>
+            </div>
+          </section>
+          <section>
+            <h3 style="font-size: 0.8em">
+              Et les autres publications qui ne sont pas citées par le
+              <b>GIEC</b>?
+            </h3>
+            <div style="font-size: 0.75em">
+              ScanR regroupe un grand nombre de publications :
+              <br />
+              <br />
+              Comment pourrait-on les valoriser ?
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
             <h3 style="font-size: 1.2em">Problématiques</h3>
             <div style="font-size: 0.85em">
               <div style="float: left; width: 100%">
                 <ul style="font-size: 0.75em; line-height: 170%">
                   <li style="margin-bottom: 1em">
-                    ❓ Quel est le modèle qu'on veut faire ?
+                    ❓ Comment valoriser notre base de données enrichie ?
                   </li>
                   <li style="margin-bottom: 1em">
-                    📖 Comment créer une base d'apprentissage pour le modèle et
-                    comment l'utiliser?
-                  </li>
-                  <li style="margin-bottom: 1em">
-                    🤷‍♀️ Que fait ce modèle dans les faits ?
+                    📖 Comment reconnaître les publications qui s'inscrivent
+                    dans le thème de l'écologie et du développement durable ?
                   </li>
                   <li style="margin-bottom: 1em">
                     📳 Quels sont ses applications possibles ?
@@ -123,11 +160,11 @@
                   <li style="margin-bottom: 1em">
                     👁️‍🗨️ Sélectionner des métadonnées pertinantes à partir de la
                     base de données du GIEC nettoyée et enrichie avec OpenAlex
-                    notamment (53 258 publications)
+                    (53 258 publications)
                   </li>
                   <li style="margin-bottom: 1em">
-                    🎣 Récupérer des publications sur OpenAlex qui ne sont pas
-                    citées ni "citables" par le GIEC a priori
+                    🎣 Récupérer des publications d'OpenAlex qui ne sont pas
+                    citées par le GIEC
                   </li>
                   <li style="margin-bottom: 1em">
                     🤔 Faire un modèle d'apprentissage
@@ -148,27 +185,22 @@
 
         <section>
           <section>
-            <h3 style="font-size: 0.85em">Un modèle qui prédit quoi ?</h3>
+            <h3 style="font-size: 0.85em">Faire un modèle de prédiction</h3>
             <div style="font-size: 0.8em">
-              Admettons qu'on nous présente une nouvelle publication, on va
-              chercher à "prédire" :
+              Admettons maintenant qu'on nous présente une nouvelle publication,
+              à quoi voudrions nous répondre :
               <div style="float: left; width: 100%">
                 <ul style="font-size: 0.75em; line-height: 170%">
                   <br />
                   <li style="margin-bottom: 1em">
-                    si elle est citable par le GIEC ?
-                    <br />
-                    <br />
+                    Est-elle citable par le GIEC ?
                   </li>
                   <li style="margin-bottom: 1em">
-                    si elle est "verte" ? (définition d'une publication "verte"
-                    ?)
-                    <br />
-                    <br />
+                    Est-elle "verte" ? (définition d'une publication "verte" ?)
                   </li>
                   <li style="margin-bottom: 1em" class="red">
-                    si elle appartient au domaine de "l'écologie et du
-                    développement soutenable" ?
+                    Appartient-elle au domaine de "l'écologie et du
+                    développement durable" ?
                   </li>
                 </ul>
               </div>
@@ -181,36 +213,40 @@
             <h3 style="font-size: 0.85em">
               Créer une base d'apprentissage (1/3)
             </h3>
-            <div style="font-size: 0.8em">
+            <div style="font-size: 0.7em">
               Dans la base de données enrichie obtenue à partir des publications
               du
               <b>GIEC</b>, à chaque publication est associée :
               <div style="float: left; width: 100%">
-                <ul style="font-size: 0.75em; line-height: 170%">
+                <ul style="font-size: 0.65em; line-height: 170%">
                   <br />
                   <li style="margin-bottom: 1em">
-                    le "doi" : c'est l'identifiant unique de la publication
+                    Un <b>identifiant</b> unique
                   </li>
                   <li style="margin-bottom: 1em">
-                    le "year" : c'est l'année de parution de la publication
+                    Une <b>année</b> de parution de la publication
                   </li>
                   <li style="margin-bottom: 1em">
-                    le "title" : c'est le titre qui résume le mieux la
-                    publication
+                    Un <b>titre</b> qui résume le mieux la publication
                   </li>
                   <li style="margin-bottom: 1em">
-                    les "topics" : les grands thèmes abordés par la publication
+                    Les grands <b>thèmes</b> abordés par la publication
                   </li>
                   <li style="margin-bottom: 1em">
-                    les "locations" : le nom des journaux dans lesquels la
-                    publication a été publié
+                    Le nom des <b>journaux</b> dans lesquels la publication a
+                    été publié
                   </li>
                 </ul>
                 <br />
                 <br />
-                ➔ dans OpenAlex il ne reste plus que <b>48 219</b> publications
-                avec ces quatre paramètres non vides sur les 53 258 qui s'y
-                trouvent.
+                ➔ Sur les 53 258 publications du GIEC qui se trouvent sur
+                OpenAlex, seulement
+                <b>48 219</b> ont des titres, thèmes et noms de journaux non
+                vides.
+                <br />
+                <br />
+                ➔ L'objectif est de trouver 48 219 publications qui ne sont pas
+                citées par le GIEC pour former notre base d'apprentissage.
               </div>
             </div>
           </section>
@@ -231,20 +267,14 @@
                 </div>
                 <ul style="font-size: 0.7em; line-height: 170%">
                   <br />
-                  <li>
+                  <li style="margin-bottom: 1em">
                     Les principaux thèmes des publications
-                    <br />
-                    <br />
                   </li>
-                  <li>
+                  <li style="margin-bottom: 1em">
                     Les principaux journaux qui les ont publiés
-                    <br />
-                    <br />
                   </li>
-                  <li>
+                  <li style="margin-bottom: 1em">
                     Leur distribution temporelle
-                    <br />
-                    <br />
                   </li>
                 </ul>
               </div>
@@ -291,19 +321,15 @@
               ➔ Avec l'API OpenAlex, on peut récupérer des publications :
               <ul style="font-size: 0.7em; line-height: 170%">
                 <br />
-                <li>
-                  qui ne sont pas citées par le <b>GIEC</b> grâce aux doi
-                  <br />
-                  <br />
+                <li style="margin-bottom: 1em">
+                  qui ne sont pas citées par le <b>GIEC</b>
                 </li>
-                <li>
+                <li style="margin-bottom: 1em">
                   qui ne comportent pas certains termes comme "climate change"
                   ou "environmental impact" dans les thèmes pour ne pas biaiser
                   notre modèle.
-                  <br />
-                  <br />
                 </li>
-                <li>
+                <li style="margin-bottom: 1em">
                   qui ont une distribution temporelle globale équivalente
                   <br />
                   (ex: pour l'année 2018 il y a 6755 publications citées par le
@@ -311,7 +337,6 @@
                   comporte pas certains thèmes et on reproduit cette opération
                   pour chaque année présente dans la distribution temporelle des
                   publications du GIEC)
-                  <br />
                 </li>
               </ul>
             </div>
@@ -330,60 +355,54 @@
             <div style="font-size: 0.8em">
               Comment faire apprendre à une machine des données textuelles ?
               <div style="float: left; width: 100%">
-                <div style="font-size: 0.75em">
-                  <ul style="font-size: 0.7em; line-height: 170%">
+                <div style="font-size: 0.7em">
+                  <ul>
                     <br />
-                    <li>
-                      Une machine a besoin de données chiffrées, on a donc
-                      besoin de "transformer" nos données textuelles en chiffre
-                      ou en vecteurs, qui sont dans les faits des chiffres mais
-                      dans plusieurs dimensions
-                      <br />
-                      (un peu comme les couleurs en RGB: une couleur est
-                      "projetée" dans 3 dimensions 'rouge', 'vert' et 'bleu')
-                      <br />
-                      <br />
+                    <li style="margin-bottom: 1em">
+                      On ne garde que les attributs les plus pertinants pour
+                      l'apprentissage : les titres, thèmes et noms de journaux
                     </li>
-                    <li>
-                      Les données étant assez complexes, on comprend qu'il va
-                      falloir "vectoriser" nos titres, thèmes et noms de
-                      journaux
-                      <br />
-                      <br />
+                    <li style="margin-bottom: 1em">
+                      Il va falloir les vectoriser
                     </li>
                   </ul>
+                </div>
+                <div style="margin-bottom: 1em">
                   ➔ Qu'est ce qu'une vectorisation ?
                 </div>
               </div>
             </div>
           </section>
           <section>
-            <h3 style="font-size: 0.7em">
-              Comment vectoriser des mots sur plusieurs dimensions ?
-            </h3>
+            <h3 style="font-size: 0.7em">Qu'est ce qu'un vecteur ?</h3>
+            <div class="gallery">
+              <img src="images/teds_model_embeddings.png" />
+            </div>
+            <div style="font-size: 0.6em">
+              faire un exemple en 1, 2 et 3 dimensions
+            </div>
+          </section>
+          <section>
+            <h3 style="font-size: 0.7em">Comment vectoriser des mots ?</h3>
             <div class="gallery">
               <img src="images/teds_model_embeddings.png" />
               <img src="images/teds_model_embeddings2.png" />
             </div>
             <div style="font-size: 0.6em">
               ➔ couteau et cuillère paraissent plus proches entre eux que homme
-              et femme
+              et femme (refaire thème Asterix, grand fort intelligent)
               <br />
               <br />
-            </div>
-            <div style="font-size: 0.65em">
-              ➔ La vectorisation de ces quatre mots sur trois dimensions est
-              faite de manière un peu arbitraire mais :
-              <b>Quels sont les moyens connus de vectorisations de mots?</b>
             </div>
           </section>
           <section>
-            <h3 style="font-size: 0.7em">
+            <h3 style="font-size: 0.8em">Annexe</h3>
+            <div style="font-size: 0.75em; line-height: 170%">
               Il y a deux grands types de vectorisations :
-            </h3>
+            </div>
             <ul style="font-size: 0.5em; line-height: 170%">
               <br />
-              <li>
+              <li style="margin-bottom: 1em">
                 La vectorisation <b>sémantique</b> dîtes statique : qui
                 reconnaît les similarités textuelles (par exemple: chat et
                 chaton auront des vecteurs proches dans l'espace vectoriel)
@@ -392,10 +411,8 @@
                 le contexte (par exemple: "le chat dort" et "il y a un message
                 dans le chat", le mot "chat" aura le même vecteur dans les deux
                 phrases)
-                <br />
-                <br />
               </li>
-              <li class="red">
+              <li style="margin-bottom: 1em" class="red">
                 La vectorisation <b>contextuelle</b> : qui prend en entrée un.e
                 texte ou phrase, le subdivise et le projette en vecteurs
                 "sémentiques"
@@ -408,43 +425,36 @@
                 mot. Ainsi le mot "chat" dans "le chat dort" et "il y a un
                 message dans le chat" n'aura pas le même vecteur selon la
                 phrase, parce que le modèle comprend le contexte local
-                <br />
-                <br />
               </li>
             </ul>
           </section>
           <section>
-            <h3 style="font-size: 0.7em">
+            <h3 style="font-size: 0.8em">Annexe</h3>
+            <div style="font-size: 0.75em; line-height: 170%">
               Dans notre cas, on vectorise de manière <b>contextuelle</b> comme
               vu plus haut, c'est à dire qu'on transforme tous les titres,
               thèmes et noms de journaux en vecteurs en prenant en compte
               certaines modalités:
-            </h3>
+            </div>
             <div style="font-size: 0.65em">
               <ul style="font-size: 0.6em; line-height: 170%">
                 <br />
-                <li>
+                <li style="margin-bottom: 1em">
                   Un prétraitement est fait en amont: les mots comme "journal"
                   ou "letters" sont retirés ainsi que les déterminants et les
                   conjonctions de coordinations
-                  <br />
-                  <br />
                 </li>
-                <li>
+                <li style="margin-bottom: 1em">
                   Le modèle de type <b>transformers</b> utilisé est le
                   <b>gte-large</b>
                   qui présente une architecture similaire à BERT (un autre
                   transformeur assez connu, qui s'est pré-entrainé sur tout
                   wikipédia )
-                  <br />
-                  <br />
                 </li>
-                <li>
+                <li style="margin-bottom: 1em">
                   Les vecteurs comportent <b>1024 dimensions</b>, c'est à dire
                   que les phrases sont projetés dans un espace vectoriel à 1024
                   dimensions et que chaque phrase a son vecteur correspondant.
-                  <br />
-                  <br />
                 </li>
               </ul>
             </div>
@@ -455,19 +465,9 @@
           <section>
             <h3 style="font-size: 0.85em">Faire le modèle (2/2)</h3>
             <div style="font-size: 0.8em">
-              Quel modèle d'apprentissage ont été utilisé dans notre cas ?
+              Quel modèle d'apprentissage à été utilisé dans notre cas ?
               <div style="float: left; width: 100%">
-                <div style="font-size: 0.75em">
-                  <ul style="font-size: 0.7em; line-height: 170%">
-                    <br />
-                    <li>
-                      Une fois vectorisé,
-                      <br />
-                      <br />
-                    </li>
-                  </ul>
-                  ➔ Qu'est ce qu'une vectorisation ?
-                </div>
+                <div style="font-size: 0.75em"></div>
               </div>
             </div>
           </section>
