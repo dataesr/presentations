@@ -143,7 +143,7 @@
                     dans le thème de l'écologie et du développement durable ?
                   </li>
                   <li style="margin-bottom: 1em">
-                    📳 Quels sont ses applications possibles ?
+                    📳 Quelles applications possibles ?
                   </li>
                 </ul>
               </div>
@@ -209,6 +209,20 @@
         </section>
 
         <section>
+          <section>
+            <h3 style="font-size: 0.85em">
+              Créer une base d'apprentissage (1/3)
+            </h3>
+            <div style="font-size: 0.8em">
+              Qu'est ce qu'une base d'apprentissage... ?
+            </div>
+          </section>
+          <section>
+            <h3 style="font-size: 0.85em">... et comment en créer une ?</h3>
+            <div style="font-size: 0.8em">
+              <img style="height: 600px" src="images/teds_learning_base.png" />
+            </div>
+          </section>
           <section>
             <h3 style="font-size: 0.85em">
               Créer une base d'apprentissage (1/3)
@@ -341,12 +355,6 @@
               </ul>
             </div>
           </section>
-          <section>
-            <div>
-              On labelise les publications du GIEC "1" et les autres 0 (à
-              reformuler)
-            </div>
-          </section>
         </section>
 
         <section>
@@ -375,24 +383,32 @@
           </section>
           <section>
             <h3 style="font-size: 0.7em">Qu'est ce qu'un vecteur ?</h3>
-            <div class="gallery">
-              <img src="images/teds_model_embeddings.png" />
-            </div>
-            <div style="font-size: 0.6em">
-              faire un exemple en 1, 2 et 3 dimensions
+            <div style="height: 800px">
+              <img src="images/teds_vectors.png" />
+              <br />
+              ➔ Un vecteur permet de donner la localisation d'un point dans
+              l'espace sur plusieurs dimensions, c'est un espace vectoriel
             </div>
           </section>
           <section>
             <h3 style="font-size: 0.7em">Comment vectoriser des mots ?</h3>
-            <div class="gallery">
+            <div style="height: 500px">
               <img src="images/teds_model_embeddings.png" />
-              <img src="images/teds_model_embeddings2.png" />
             </div>
-            <div style="font-size: 0.6em">
-              ➔ couteau et cuillère paraissent plus proches entre eux que homme
-              et femme (refaire thème Asterix, grand fort intelligent)
+            <div style="font-size: 0.55em">
+              ➔ En connaissant un peu le sujet, on peut placer approximativement
+              ces 3 mots dans un espace vectoriel de dimension 3
+            </div>
+          </section>
+          <section>
+            <div style="font-size: 0.55em">
+              ➔ De la même manière, il existe des modèles d'IA permettant de
+              placer des mots dans des espaces de dimensions plus ou moins
+              grands
               <br />
               <br />
+              ➔ Ainsi on vectorise les titres, thèmes et noms de journaux dans
+              un espace vectoriel de 1024 dimensions
             </div>
           </section>
           <section>
@@ -404,23 +420,25 @@
               <br />
               <li style="margin-bottom: 1em">
                 La vectorisation <b>sémantique</b> dîtes statique : qui
-                reconnaît les similarités textuelles (par exemple: chat et
-                chaton auront des vecteurs proches dans l'espace vectoriel)
+                reconnaît les similarités textuelles <br />
+                Par exemple, chat et chaton auront des vecteurs proches dans
+                l'espace vectoriel
                 <br />
                 Par contre, deux synonymes auront le même vecteur, peu importe
-                le contexte (par exemple: "le chat dort" et "il y a un message
-                dans le chat", le mot "chat" aura le même vecteur dans les deux
-                phrases)
+                le contexte <br />
+                Par exemple, dans les phrases "le chat dort" et "il y a un
+                message dans le chat", le mot "chat" aura le même vecteur dans
+                les deux phrases
               </li>
               <li style="margin-bottom: 1em" class="red">
                 La vectorisation <b>contextuelle</b> : qui prend en entrée un.e
                 texte ou phrase, le subdivise et le projette en vecteurs
-                "sémentiques"
+                "sémantiques"
                 <br />
                 Ces vecteurs sont <b>transformés</b> via un réseau de neurones
                 pré-entrainé appelé "transformers", il y a plusieurs modèles de
                 transformers (<b>encoders</b>, decoders ou encore
-                visionTransformers... ). En sortie, ces modèles donnent des
+                visionTransformers... ) <br />En sortie, ces modèles donnent des
                 vecteurs qui prennent en compte le contexte spécifique de chaque
                 mot. Ainsi le mot "chat" dans "le chat dort" et "il y a un
                 message dans le chat" n'aura pas le même vecteur selon la
@@ -431,10 +449,9 @@
           <section>
             <h3 style="font-size: 0.8em">Annexe</h3>
             <div style="font-size: 0.75em; line-height: 170%">
-              Dans notre cas, on vectorise de manière <b>contextuelle</b> comme
-              vu plus haut, c'est à dire qu'on transforme tous les titres,
-              thèmes et noms de journaux en vecteurs en prenant en compte
-              certaines modalités:
+              Dans notre cas, on vectorise de manière <b>contextuelle</b> ,
+              c'est à dire qu'on transforme les titres, thèmes et noms de
+              journaux en vecteurs en prenant en compte certaines modalités:
             </div>
             <div style="font-size: 0.65em">
               <ul style="font-size: 0.6em; line-height: 170%">
@@ -464,6 +481,15 @@
         <section>
           <section>
             <h3 style="font-size: 0.85em">Faire le modèle (2/2)</h3>
+            <div style="font-size: 0.8em">
+              Quel modèle d'apprentissage à été utilisé dans notre cas ?
+              <div style="float: left; width: 100%">
+                <div style="font-size: 0.75em"></div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <h3 style="font-size: 0.85em">Qu'est ce qu'un arbre de décision</h3>
             <div style="font-size: 0.8em">
               Quel modèle d'apprentissage à été utilisé dans notre cas ?
               <div style="float: left; width: 100%">
