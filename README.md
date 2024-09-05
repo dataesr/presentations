@@ -14,6 +14,7 @@
 - [20240412 - Brevets TEDS : Edition 2024](https://dataesr.github.io/presentations/20240412_brevets_teds.html)
 - [20240516 - Works Magnet](https://dataesr.github.io/presentations/20240516_works_magnet.html)
 - [20240617 - Brevets publics](https://dataesr.github.io/presentations/20240617_brevets_publics)
+- [20240905 - Open Science Days](https://dataesr.github.io/presentations/20240905_open_science_days)
 
 ## Run server
 
