@@ -416,7 +416,7 @@
               <br />
               <br />
               ➔ Ainsi on vectorise les titres, thèmes et noms de journaux dans
-              un espace vectoriel de 1024 dimensions
+              un espace vectoriel de 100 dimensions
             </div>
           </section>
           <section>
@@ -426,7 +426,7 @@
             </div>
             <ul style="font-size: 0.5em; line-height: 170%">
               <br />
-              <li style="margin-bottom: 1em">
+              <li style="margin-bottom: 1em" class="red">
                 La vectorisation <b>sémantique</b> dîtes statique : qui
                 reconnaît les similarités textuelles <br />
                 Par exemple, chat et chaton auront des vecteurs proches dans
@@ -438,7 +438,7 @@
                 message dans le chat", le mot "chat" aura le même vecteur dans
                 les deux phrases
               </li>
-              <li style="margin-bottom: 1em" class="red">
+              <li style="margin-bottom: 1em">
                 La vectorisation <b>contextuelle</b> : qui prend en entrée un.e
                 texte ou phrase, le subdivise et le projette en vecteurs
                 "sémantiques"
@@ -457,9 +457,9 @@
           <section>
             <h3 style="font-size: 0.8em">Annexe</h3>
             <div style="font-size: 0.75em; line-height: 170%">
-              Dans notre cas, on vectorise de manière <b>contextuelle</b> ,
-              c'est à dire qu'on transforme les titres, thèmes et noms de
-              journaux en vecteurs en prenant en compte certaines modalités:
+              Dans notre cas, on vectorise de manière <b>sémantique</b> , c'est
+              à dire qu'on vectorise les titres, thèmes et noms de journaux en
+              vecteurs en prenant en compte certaines modalités:
             </div>
             <div style="font-size: 0.65em">
               <ul style="font-size: 0.6em; line-height: 170%">
@@ -470,15 +470,15 @@
                   conjonctions de coordinations
                 </li>
                 <li style="margin-bottom: 1em">
-                  Le modèle de type <b>transformers</b> utilisé est le
-                  <b>gte-large</b>
-                  qui présente une architecture similaire à BERT (un autre
-                  transformeur assez connu, qui s'est pré-entrainé sur tout
-                  wikipédia )
+                  Le modèle utilisé est <b>Fasttext</b>: c'est un modèle
+                  d'apprentissage qui permet de représenter les mots dans un
+                  espace vectoriel. il prend aussi en compte les sous-mots, ce
+                  qui permet de mieux capturer les relations sémantiques entre
+                  des mots rares ou inconnus
                 </li>
                 <li style="margin-bottom: 1em">
-                  Les vecteurs comportent <b>1024 dimensions</b>, c'est à dire
-                  que les phrases sont projetés dans un espace vectoriel à 1024
+                  Les vecteurs comportent <b>100 dimensions</b>, c'est à dire
+                  que les phrases sont projetées dans un espace vectoriel à 100
                   dimensions et que chaque phrase a son vecteur correspondant
                 </li>
               </ul>
@@ -519,30 +519,16 @@
           </section>
           <section>
             <div style="font-size: 0.8em">
-              Le modèle utilisé ici est une <b>forêt aléatoire</b>:
-              <div style="float: left; width: 100%">
-                <ul
-                  style="
-                    list-style-type: none;
-                    font-size: 0.75em;
-                    line-height: 170%;
-                  "
-                >
-                  <br />
-                  <li style="margin-bottom: 1em">
-                    Une forêt aléatoire est constituée de plusieurs arbres de
-                    décision
-                  </li>
-                </ul>
-              </div>
+              Le modèle utilisé ici est une <b>regression logistique</b>:
               <br />
-              ➔ Qu'est-ce qu'un arbre de décision et comment s'organise une
-              forêt aléatoire ?
+              ➔ Qu'est-ce qu'une régression logistique ?
             </div>
           </section>
           <section>
             <h3 style="font-size: 0.85em">
-              Un arbre de décision représente une série de choix interconnectée
+              La régression logistique prédit une catégorie (par exemple, 0 ou
+              1) en calculant la probabilité que quelque chose appartienne à
+              cette catégorie
             </h3>
             <div style="height: 500px">
               <img src="images/teds_tree.png" />

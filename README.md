@@ -10,7 +10,7 @@
 - [20240228 - Baromètre de la science ouverte: Edition 2023](https://dataesr.github.io/presentations/20240228_bso_edition_2023.html)
 - [20240313 - Baromètre de la science ouverte 2023 : Webinaire Club Utilisateurs](https://dataesr.github.io/presentations/20240313_bso_webinaire_club_utilisateurs.html)
 - [20240311 - TEDS : Edition 2024](https://dataesr.github.io/presentations/20240311_teds.html)
-- [202407XX - TEDS - model : Edition 2024](https://dataesr.github.io/presentations/202407XX_teds_model.html)
+- [202412XX - TEDS - model : Edition 2024](https://dataesr.github.io/presentations/202412XX_teds_model.html)
 - [20240412 - Brevets TEDS : Edition 2024](https://dataesr.github.io/presentations/20240412_brevets_teds.html)
 - [20240516 - Works Magnet](https://dataesr.github.io/presentations/20240516_works_magnet.html)
 - [20240617 - Brevets publics](https://dataesr.github.io/presentations/20240617_brevets_publics)
