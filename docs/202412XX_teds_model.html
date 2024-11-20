@@ -39,6 +39,35 @@
         border-color: red;
         border-width: 2px;
       }
+      .frac {
+        display: inline-block;
+        margin-left: 0.1em;
+        margin-right: 0.1em;
+        vertical-align: -64%;
+        text-align: center;
+      }
+      .frac > .num,
+      .frac > .den {
+        display: inline-block;
+        padding: 0 0.1em;
+      }
+      .frac > .fracbar {
+        display: block;
+        height: 0;
+        margin: 0;
+        border: 0;
+        border-bottom: 0.1em solid;
+        overflow: hidden;
+      }
+      .den {
+        vertical-align: top;
+      }
+      .math {
+        font-family: times;
+        padding: 0 0.1em;
+        font-size: 1.2em;
+        font-style: normal;
+      }
     </style>
   </head>
 
@@ -519,7 +548,9 @@
           </section>
           <section>
             <div style="font-size: 0.8em">
-              Le modèle utilisé ici est une <b>regression logistique</b>:
+              Le modèle utilisé ici est un modèle d'apprentissage Fasttext qui
+              après avoir vectorisé les mots effectue une
+              <b>regression logistique</b>:
               <br />
               ➔ Qu'est-ce qu'une régression logistique ?
             </div>
@@ -527,21 +558,39 @@
           <section>
             <h3 style="font-size: 0.85em">
               La régression logistique prédit une catégorie (par exemple, 0 ou
-              1) en calculant la probabilité que quelque chose appartienne à
-              cette catégorie
+              1) en calculant la probabilité qu'une publication appartienne à
+              cette catégorie, on la définit à partir de notre base
+              d'apprentissage:
             </h3>
             <div style="height: 500px">
-              <img src="images/teds_tree.png" />
+              <img src="images/teds_regression_app.png" />
             </div>
           </section>
           <section>
             <h3 style="font-size: 0.85em">
-              Une forêt aléatoire est un ensemble d'arbre de décision permettant
-              d'obtenir une probabilité
+              Une fois l'apprentissage terminé, le modèle est capable de prévoir
+              la catégorie associée à une nouvelle publication (qui n'appartient
+              pas à la base d'apprentissage)
             </h3>
             <div style="height: 500px">
-              <img src="images/teds_randomforest.png" />
+              <img src="images/teds_regression_test.png" />
             </div>
+          </section>
+          <section>
+            <h3 style="font-size: 0.8em">Annexe</h3>
+            <div style="font-size: 0.75em; line-height: 170%">
+              La fonction logistique:
+            </div>
+            <span class="math">
+              f(<i>x</i>)=
+              <span class="frac">
+                <span class="num">1</span>
+                <span class="fracbar">/</span>
+                <span class="den"
+                  >1 + e<sup>-<i>x</i></sup></span
+                >
+              </span>
+            </span>
           </section>
         </section>
 
@@ -557,8 +606,8 @@
           </section>
           <section>
             <h3 style="font-size: 0.85em">
-              Sur les 19 288 publications de la base de test, 18 415
-              publications sont prédits correctement, soit 95% des publications
+              Sur les 19 288 publications de la base de test, 18 788
+              publications sont prédits correctement, soit 97% des publications
             </h3>
             <div style="height: 500px; font-size: 0.8em">
               <img src="images/teds_model_results.png" />
@@ -570,13 +619,27 @@
         <section>
           <section>
             <h3 style="font-size: 0.85em">
-              Application sur les publications ScanR
+              Quelles applications sur les publications ScanR ?
             </h3>
-            <div style="font-size: 0.8em">
-              montrer ce que ça donne sur les publis ScanR
-              <div style="float: left; width: 100%">
-                <div style="font-size: 0.75em"></div>
-              </div>
+          </section>
+          <section>
+            <h3 style="font-size: 0.85em">
+              La part de publication abordant des thématiques relatives à
+              l'écologie semble augmenter ces dernieres années :
+            </h3>
+            <div style="height: 500px; font-size: 0.8em">
+              <img src="images/teds_model_scanR1.png" />
+              <br />
+            </div>
+          </section>
+          <section>
+            <h3 style="font-size: 0.85em">
+              Cette part semble d'autant plus importantes lorsqu'on considère
+              les publications avec des thèmes associés
+            </h3>
+            <div style="height: 500px; font-size: 0.8em">
+              <img src="images/teds_model_scanR2.png" />
+              <br />
             </div>
           </section>
         </section>
