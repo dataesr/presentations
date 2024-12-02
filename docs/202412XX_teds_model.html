@@ -123,12 +123,12 @@
             <h3 style="font-size: 0.85em">Mise en contexte</h3>
             <div style="font-size: 0.8em">
               Lors de la première phase d'analyse, à partir des publications du
-              <b>GIEC</b>, nous avons:
+              <b>GIEC</b>, nous avons :
               <div style="float: left; width: 100%">
                 <ul style="font-size: 0.75em; line-height: 170%">
                   <li style="margin-block: 1em">
-                    🧹 Collecté et nettoyé les données disponible sur le site du
-                    GIEC
+                    🧹 Collecté et nettoyé les données disponibles sur le site
+                    du GIEC
                   </li>
                   <li style="margin-block: 1em">
                     💰 Enrichi ces données notamment grâce à OpenAlex
@@ -147,10 +147,11 @@
           <section>
             <h3 style="font-size: 0.8em">
               Et les autres publications qui ne sont pas citées par le
-              <b>GIEC</b>?
+              <b>GIEC</b> ?
             </h3>
             <div style="font-size: 0.75em">
-              ScanR regroupe un grand nombre de publications :
+              ScanR regroupe les publications comptant au moins une affiliation
+              en France :
               <br />
               <br />
               Comment pourrait-on les valoriser ?
@@ -169,7 +170,7 @@
                   </li>
                   <li style="margin-bottom: 1em">
                     📖 Comment reconnaître les publications qui s'inscrivent
-                    dans le thème de l'écologie et du développement durable ?
+                    dans les mêmes thèmes que le rapport du GIEC ?
                   </li>
                   <li style="margin-bottom: 1em">
                     📳 Quelles applications possibles ?
@@ -181,13 +182,47 @@
         </section>
 
         <section>
+          <h3 style="font-size: 1.2em">Les éléments clés à retenir:</h3>
+          <div style="font-size: 0.85em">
+            <div style="float: left; width: 100%">
+              <ul style="font-size: 0.6em; line-height: 170%">
+                <br />
+                <li>
+                  😕 Seulement 1.3 % des publications de ScanR sont taguées
+                  positivement par le modèle, ce chiffre augmente à 4.5% lorsque
+                  l'on considère les publications ayant des thèmes importés
+                  d'OpenAlex
+                  <br />
+                  <br />
+                </li>
+                <li>
+                  🚩 Plus de 60% des plubications taguées positivement semblent
+                  liées à l'adaptation, alors que seulement 30% des publications
+                  françaises du GIEC sont liées à l'adaptation
+                  <br />
+                  <br />
+                </li>
+                <li>
+                  📈 La part de publication taguée positivement a doublé en 2023
+                  par rapport à 2013, ce chiffre baisse à 1.6% lorsque l'on
+                  considère les publications ayant des thèmes importés
+                  d'OpenAlex
+                  <br />
+                  <br />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
           <section>
             <h3 style="font-size: 1.2em">Méthodologie</h3>
             <div style="font-size: 0.85em">
               <div style="float: left; width: 100%">
                 <ul style="font-size: 0.75em; line-height: 170%">
                   <li style="margin-bottom: 1em">
-                    👁️‍🗨️ Sélectionner des métadonnées pertinantes à partir de la
+                    👁️‍🗨️ Sélectionner des métadonnées pertinentes à partir de la
                     base de données du GIEC nettoyée et enrichie avec OpenAlex
                     (53 258 publications)
                   </li>
@@ -228,11 +263,12 @@
                     Est-elle citable par le GIEC ?
                   </li>
                   <li style="margin-bottom: 1em">
-                    Est-elle "verte" ? (définition d'une publication "verte" ?)
-                  </li>
-                  <li style="margin-bottom: 1em" class="red">
                     Appartient-elle au domaine de "l'écologie et du
                     développement durable" ?
+                  </li>
+                  <li style="margin-bottom: 1em" class="red">
+                    S'inscrit-elle dans les thèmatiques abordées dans les
+                    travaux du <b>GIEC</b> ?
                   </li>
                 </ul>
               </div>
@@ -246,7 +282,7 @@
               Créer une base d'apprentissage (1/3)
             </h3>
             <div style="font-size: 0.8em">
-              Qu'est ce qu'une base d'apprentissage ?
+              Qu'est-ce qu'une base d'apprentissage ?
             </div>
           </section>
           <section>
@@ -305,12 +341,12 @@
               Créer une base d'apprentissage (2/3)
             </h3>
             <div style="font-size: 0.8em">
-              Comment trouver des publications au hasard qui ne sont pas
-              relatifs au <b>GIEC</b> ?
+              Comment trouver des publications au hasard qui ne sont pas liées
+              aux thématiques abordées dans les travaux du <b>GIEC</b> ?
               <div style="float: left; width: 100%">
                 <div style="font-size: 0.75em">
-                  Pour commencer , il vaut mieux comprendre les publications du
-                  <b>GIEC</b>, pour ça on peut regarder:
+                  Pour commencer , il faut mieux comprendre les publications du
+                  GIEC. Pour çela on peut regarder :
                 </div>
                 <ul style="font-size: 0.7em; line-height: 170%">
                   <br />
@@ -318,7 +354,7 @@
                     Les principaux thèmes des publications
                   </li>
                   <li style="margin-bottom: 1em">
-                    Les principaux journaux qui les ont publiés
+                    Les principaux journaux qui les ont publiées
                   </li>
                   <li style="margin-bottom: 1em">
                     Leur distribution temporelle
@@ -424,7 +460,7 @@
                   <ul>
                     <br />
                     <li style="margin-bottom: 1em">
-                      On ne garde que les attributs les plus pertinants pour
+                      On ne garde que les attributs les plus pertinents pour
                       l'apprentissage : les titres, thèmes et noms de journaux
                     </li>
                     <li style="margin-bottom: 1em">
@@ -466,7 +502,7 @@
             <div style="font-size: 0.55em">
               ➔ De la même manière, il existe des modèles d'IA permettant de
               placer des mots dans des espaces de dimensions plus ou moins
-              grands: ici ce sera <b>Fasttext</b>
+              grands : ici ce sera <b>Fasttext</b>
               <br />
               ➔ Fasttext vectorise les mots puis les traite pour créer un modèle
               de prédiction
@@ -516,25 +552,25 @@
             <div style="font-size: 0.75em; line-height: 170%">
               Dans notre cas, on vectorise de manière <b>sémantique</b> , c'est
               à dire qu'on vectorise les titres, thèmes et noms de journaux en
-              vecteurs en prenant en compte certaines modalités:
+              vecteurs en prenant en compte certaines modalités :
             </div>
             <div style="font-size: 0.7em">
               <ul style="font-size: 0.7em; line-height: 170%">
                 <br />
                 <li style="margin-bottom: 1em">
-                  Un prétraitement est fait en amont: les mots comme "journal"
+                  Un prétraitement est fait en amont : les mots comme "journal"
                   ou "letters" sont retirés ainsi que les déterminants et les
                   conjonctions de coordinations
                 </li>
                 <li style="margin-bottom: 1em">
-                  Le modèle utilisé est <b>Fasttext</b>: c'est un modèle
+                  Le modèle utilisé est <b>Fasttext</b> : c'est un modèle
                   d'apprentissage qui permet de représenter les mots dans un
-                  espace vectoriel. il prend aussi en compte les sous-mots, ce
+                  espace vectoriel. Il prend aussi en compte les sous-mots, ce
                   qui permet de mieux capturer les relations sémantiques entre
                   des mots rares ou inconnus
                 </li>
                 <li style="margin-bottom: 1em">
-                  Les vecteurs comportent <b>100 dimensions</b>, c'est à dire
+                  Les vecteurs comportent <b>100 dimensions</b>, c'est-à-dire
                   que les phrases sont projetées dans un espace vectoriel à 100
                   dimensions et que chaque phrase a son vecteur correspondant
                 </li>
@@ -556,7 +592,7 @@
             <div style="font-size: 0.8em">
               Le modèle utilisé ici est un modèle d'apprentissage Fasttext qui
               après avoir vectorisé les mots effectue une
-              <b>regression logistique</b>:
+              <b>regression logistique</b> :
               <br />
               ➔ Qu'est-ce qu'une régression logistique ?
             </div>
@@ -566,7 +602,7 @@
               La régression logistique prédit une catégorie (par exemple, 0 ou
               1) en calculant la probabilité qu'une publication appartienne à
               cette catégorie, on la définit à partir de notre base
-              d'apprentissage:
+              d'apprentissage :
             </h3>
             <div style="height: 550px">
               <img src="images/teds_regression_app.png" />
@@ -624,7 +660,7 @@
             <h3 style="font-size: 0.7em">
               Si la publication est considérée "citable par le GIEC", alors on
               lui applique un deuxième modèle qui détermine dans quel working
-              group il aurait été cité:
+              group il aurait été cité :
             </h3>
             <div class="gallery">
               <img src="images/teds_model2_results_science.png" />
@@ -643,7 +679,7 @@
           <section>
             <div style="font-size: 0.8em">
               1.3 % des publications de scanR semblent aborder des thématiques
-              autour de l'écologie et/ou du developpement durable
+              liées aux travaux du GIEC :
               <br />
               ➔ 0.3 % science
               <br />
@@ -669,8 +705,8 @@
           </section>
           <section>
             <h3 style="font-size: 0.85em">
-              La part de publication abordant des thématiques relatives à
-              l'écologie semble augmenter ces dernieres années :
+              La part de publication abordant des thématiques proches de celles
+              abordées par le GIEC semble augmenter ces dernieres années :
             </h3>
             <div style="height: 500px; font-size: 0.8em">
               <img src="images/teds_model_scanR1.png" />
@@ -679,8 +715,8 @@
           </section>
           <section>
             <h3 style="font-size: 0.85em">
-              Cette part semble d'autant plus importantes lorsqu'on considère
-              les publications avec des thèmes associés
+              Cette part semble d'autant plus importante lorsqu'on considère les
+              publications avec des thèmes associés
             </h3>
             <div style="height: 500px; font-size: 0.8em">
               <img src="images/teds_model_scanR2.png" />
@@ -698,6 +734,58 @@
               <img src="images/teds_model_mitigation_scanR3.png" />
             </div>
           </section>
+          <section>
+            <h3 style="font-size: 0.7em">
+              Les réseaux de chercheurs des publications du GIEC semble plus
+              dense que celui des publications taguées "giec" par le modèle
+            </h3>
+            <div style="height: 500px; font-size: 0.8em">
+              <img src="images/teds_scanR_authors.png" />
+            </div>
+          </section>
+          <section>
+            <h3 style="font-size: 0.7em">
+              Les publications du GIEC semble aborder des thèmes similaires,
+              mais parfois moins précis, que les publications taguées "giec" par
+              le modèle
+            </h3>
+            <div style="height: 500px; font-size: 0.8em">
+              <img src="images/teds_scanR_themes.png" />
+            </div>
+          </section>
+        </section>
+        <section>
+          <h3 style="font-size: 1.2em">Les éléments clés à retenir:</h3>
+          <div style="font-size: 0.85em">
+            <div style="float: left; width: 100%">
+              <ul style="font-size: 0.6em; line-height: 170%">
+                <br />
+                <li>
+                  😕 Seulement 1.3 % des publications de ScanR sont taguées
+                  positivement par le modèle, ce chiffre augmente à 4.5% lorsque
+                  l'on considère les publications ayant des thèmes importés
+                  d'OpenAlex
+                  <br />
+                  <br />
+                </li>
+                <li>
+                  🚩 Plus de 60% des plubications taguées positivement semblent
+                  liées à l'adaptation, alors que seulement 30% des publications
+                  françaises du GIEC sont liées à l'adaptation
+                  <br />
+                  <br />
+                </li>
+                <li>
+                  📈 La part de publication taguée positivement a doublé en 2023
+                  par rapport à 2013, ce chiffre baisse à 1.6% lorsque l'on
+                  considère les publications ayant des thèmes importés
+                  d'OpenAlex
+                  <br />
+                  <br />
+                </li>
+              </ul>
+            </div>
+          </div>
         </section>
       </div>
     </div>
