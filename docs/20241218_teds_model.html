@@ -100,7 +100,7 @@
               text-align: left;
             "
           >
-            <p style="margin: 0">XX décembre 2024</p>
+            <p style="margin: 0">18 décembre 2024</p>
           </div>
           <div
             style="
@@ -662,34 +662,19 @@
         <section>
           <section>
             <h3 style="font-size: 0.85em">
-              Quelles applications sur les publications ScanR ?
+              Quelles applications sur les publications françaises ?
             </h3>
           </section>
           <section>
             <div style="font-size: 0.8em">
-              1.3 % des publications de scanR semblent aborder des thématiques
-              liées aux travaux du GIEC :
+              1.9 % des publications de scanR semblent aborder des thématiques
+              liées aux travaux du GIEC:
               <br />
-              ➔ 0.3 % science
+              ➔ 0.4 % science
               <br />
-              ➔ 0.8 % adaptation
+              ➔ 1.2 % adaptation
               <br />
-              ➔ 0.2 % mitigation
-            </div>
-          </section>
-          <section>
-            <div style="font-size: 0.8em">
-              Lorsque l'on considère les publications ayant des thèmes importés
-              d'OpenAlex, ce chiffre semble augmenter :
-              <br />
-              4.5 % des publications semblent aborder des thématiques autour de
-              l'écologie et/ou du developpement durable
-              <br />
-              ➔ 1 % science
-              <br />
-              ➔ 2.9 % adaptation
-              <br />
-              ➔ 0.6 % mitigation
+              ➔ 0.3 % mitigation
             </div>
           </section>
           <section>
@@ -699,16 +684,6 @@
             </h3>
             <div style="height: 500px; font-size: 0.8em">
               <img src="images/teds_model_scanR1.png" />
-              <br />
-            </div>
-          </section>
-          <section>
-            <h3 style="font-size: 0.85em">
-              Cette part semble d'autant plus importante lorsqu'on considère les
-              publications avec des thèmes associés
-            </h3>
-            <div style="height: 500px; font-size: 0.8em">
-              <img src="images/teds_model_scanR2.png" />
               <br />
             </div>
           </section>
@@ -725,21 +700,52 @@
           </section>
           <section>
             <h3 style="font-size: 0.7em">
-              Les réseaux de chercheurs des publications du GIEC semble plus
-              dense que celui des publications taguées "giec" par le modèle
+              Les auteurs des publications taguées "giec" semblent balayer un
+              large panel - giec
             </h3>
-            <div style="height: 500px; font-size: 0.8em">
-              <img src="images/teds_scanR_authors.png" />
+            <div style="height: 800px; font-size: 0.8em">
+              <img src="images/teds_scanR_authors_ipcc.png" />
+            </div>
+          </section>
+          <section>
+            <h3 style="font-size: 0.7em">
+              Les réseaux de chercheurs des publications du GIEC semble plus
+              dense que celui des publications prédits "giec" par le modèle -
+              predict giec
+            </h3>
+            <div style="height: 800px; font-size: 0.8em">
+              <img src="images/teds_scanR_authors_predict.png" />
+            </div>
+          </section>
+          <section>
+            <h3 style="font-size: 0.7em">
+              Les clusters sont très interconnectés - giec
+            </h3>
+            <div style="height: 800px; font-size: 0.8em">
+              <img src="images/teds_scanR_themes_ipcc.png" />
             </div>
           </section>
           <section>
             <h3 style="font-size: 0.7em">
               Les publications du GIEC semble aborder des thèmes similaires,
               mais parfois moins précis, que les publications taguées "giec" par
-              le modèle
+              le modèle - predict giec
             </h3>
-            <div style="height: 500px; font-size: 0.8em">
-              <img src="images/teds_scanR_themes.png" />
+            <div style="height: 800px; font-size: 0.8em">
+              <img src="images/teds_scanR_themes_predict.png" />
+            </div>
+          </section>
+          <section>
+            <h3 style="font-size: 0.7em">Annexe</h3>
+            <div style="font-size: 0.8em">
+              76843 sur 4 111 493 publications de scanR semblent aborder des
+              thématiques liées aux travaux du GIEC:
+              <br />
+              ➔ 15528 publications liées aux sciences
+              <br />
+              ➔ 48898 publications liées à l'adaptation
+              <br />
+              ➔ 11913 publications liées à l'atténuation
             </div>
           </section>
         </section>
@@ -751,10 +757,13 @@
           </section>
           <section>
             <h3 style="font-size: 0.7em">
-              Avec les publications taguées "predict_ipcc" de scanR:
-              <br />➔ on trouve les thèmes reccurents et les mots susceptibles
+              Avec les publications françaises de scanR taguées "giec" par le
+              modèle, on détermine:<br />
+              <br />➔ les thèmes reccurents et les mots susceptibles
               d'apparaître dans le titre ou résumé des publications abordant des
-              thématiques liées au rapport du GIEC
+              thématiques liées au rapport du GIEC <br />
+              <br />➔ à partir de ça, on établit des filtres à appliquer sur un
+              échantillon 42 fois plus grand que scanR : OpenAlex
             </h3>
           </section>
           <section>
@@ -788,7 +797,7 @@
               <ul style="font-size: 0.6em; line-height: 170%">
                 <br />
                 <li>
-                  😕 Seulement 1.3 % des publications de ScanR sont taguées
+                  😕 Seulement 1.9 % des publications de ScanR sont taguées
                   positivement par le modèle
                   <br />
                   <br />
@@ -801,8 +810,8 @@
                   <br />
                 </li>
                 <li>
-                  📈 La part de publication taguée positivement a doublé en 2023
-                  par rapport à 2013
+                  📈 La part de publication française liée aux thématiques du
+                  rapport du GIEC a doublé depuis 2013
                   <br />
                   <br />
                 </li>
